@@ -1,0 +1,488 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>OW2ソルジャー構成診断｜敵構成から立ち回りを自動診断</title>
+<meta name="description" content="Overwatch 2のソルジャー76向け構成診断アプリ。敵構成、マップ、味方構成から開幕行動、撃つ順番、ピークタイミング、タクティカル・バイザー使用条件を診断。">
+<meta name="keywords" content="Overwatch 2, OW2, ソルジャー76, ソルジャー, 構成診断, 立ち回り, タクティカル・バイザー, オーバーウォッチ2">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OW2ソルジャー構成診断｜敵構成から立ち回りを自動診断">
+<meta property="og:description" content="Overwatch 2のソルジャー76向け構成診断アプリ。敵構成、マップ、味方構成から開幕行動、撃つ順番、ピークタイミング、タクティカル・バイザー使用条件を診断。">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/">
+<meta property="og:site_name" content="OW2ソルジャー構成診断">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OW2ソルジャー構成診断｜敵構成から立ち回りを自動診断">
+<meta name="twitter:description" content="Overwatch 2のソルジャー76向け構成診断アプリ。敵構成、マップ、味方構成から開幕行動、撃つ順番、ピークタイミング、タクティカル・バイザー使用条件を診断。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "OW2ソルジャー構成診断",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web",
+  "description": "Overwatch 2のソルジャー76向け構成診断アプリ。敵構成、マップ、味方構成から開幕行動、撃つ順番、ピークタイミング、タクティカル・バイザー使用条件を診断。",
+  "url": "https://YOUR-DOMAIN.example/"
+}
+</script><style>
+:root{--bg:#0f172a;--panel:#111c33;--panel2:#17233d;--text:#e5eefc;--muted:#9fb0c8;--accent:#60a5fa;--accent2:#38bdf8;--bad:#fb7185;--good:#34d399;--warn:#fbbf24;--border:rgba(255,255,255,.12);}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:linear-gradient(180deg,#101a31,#0b1020);color:var(--text)}header{padding:18px 16px 12px;position:sticky;top:0;background:rgba(15,23,42,.94);backdrop-filter:blur(10px);z-index:10;border-bottom:1px solid var(--border)}h1{margin:0 0 8px;font-size:20px}.sub{color:var(--muted);font-size:12px;line-height:1.5}.tabs{display:flex;gap:8px;padding:10px 12px;position:sticky;top:73px;background:rgba(15,23,42,.93);z-index:9;border-bottom:1px solid var(--border)}.tab{flex:1;border:1px solid var(--border);background:#10192e;color:var(--text);border-radius:999px;padding:10px 8px;font-weight:700}.tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06101f}main{padding:14px;max-width:980px;margin:auto}.card{background:rgba(17,28,51,.88);border:1px solid var(--border);border-radius:18px;padding:14px;margin-bottom:14px;box-shadow:0 12px 28px rgba(0,0,0,.18)}h2{margin:0 0 12px;font-size:18px}h3{margin:16px 0 8px;font-size:15px;color:#dbeafe}label{display:block;color:var(--muted);font-size:12px;margin:10px 0 5px}select,button{width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);background:#0d1527;color:var(--text);font-size:15px}button.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06101f;font-weight:800;border:none;margin-top:14px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:760px){.grid{grid-template-columns:repeat(5,1fr)}}.kpi{background:var(--panel2);border:1px solid var(--border);border-radius:14px;padding:10px}.kpi .name{color:var(--muted);font-size:12px;line-height:1.35}.kpi .value{font-size:15px;font-weight:900;line-height:1.45}.heroGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}@media(min-width:760px){.heroGrid{grid-template-columns:repeat(7,1fr)}}.heroBtn{min-height:62px;padding:8px 5px;border-radius:14px;background:#12213c;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}.heroBtn.active{border-color:var(--accent2);box-shadow:0 0 0 2px rgba(56,189,248,.25) inset}.pixel{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#60a5fa,#a78bfa);display:grid;place-items:center;color:#06101f;font-weight:900}.heroName{font-size:11px;line-height:1.1;text-align:center}.roleTitle{margin:16px 0 8px;font-weight:900;color:#bfdbfe}.bar{height:9px;background:#0b1222;border-radius:999px;overflow:hidden;border:1px solid var(--border)}.fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px}.row{display:grid;grid-template-columns:130px 1fr;gap:8px;align-items:center;margin:8px 0}.small{color:var(--muted);font-size:12px;line-height:1.65}.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#0b1222;border:1px solid var(--border);color:#cfe3ff;font-size:12px;margin:3px 3px 3px 0}.warn{color:var(--warn)}.bad{color:var(--bad)}.good{color:var(--good)}.hidden{display:none}ul{padding-left:18px;line-height:1.75}.note{border-left:3px solid var(--accent2);padding-left:10px;color:#dbeafe;line-height:1.7}
+</style></head><body>
+<noscript>
+  <main>
+    <h1>OW2ソルジャー構成診断</h1>
+    <p>Overwatch 2のソルジャー76向けに、敵構成・マップ・味方構成から立ち回りを診断するWebアプリです。</p>
+  </main>
+</noscript><header><h1>OW2 ソルジャー構成診断 v8.0</h1><div class="sub">構成タグ v2.2、skill_threat、診断ルール v2 / 固有注意文・マップ・味方構成補正 を内部エンジン化。数値・集計は画面に表示しない機密仕様です。</div></header><nav class="tabs"><button class="tab active" onclick="showTab('comp')">構成診断</button><button class="tab" onclick="showTab('detail')">詳細診断</button></nav><main><section id="comp" class="page"><div class="card"><h2>敵構成を選択</h2><div class="grid"><div><label>タンク</label><select id="tank"></select></div><div><label>ダメージ1</label><select id="dps1"></select></div><div><label>ダメージ2</label><select id="dps2"></select></div><div><label>サポート1</label><select id="sup1"></select></div><div><label>サポート2</label><select id="sup2"></select></div></div><h3>任意入力</h3><div class="grid"><div><label>マップ</label><select id="map"></select></div><div><label>味方タンク</label><select id="allyTank"><option value="">未選択</option></select></div><div><label>味方サポート1</label><select id="allySup1"><option value="">未選択</option></select></div><div><label>味方サポート2</label><select id="allySup2"><option value="">未選択</option></select></div></div><button class="primary" onclick="diagnose()">診断する</button></div><div id="result"></div></section><section id="detail" class="page hidden"><div class="card"><h2>1体詳細診断</h2><p class="small">キャラをタップすると、ソルジャー視点の注意点を表示します。内部数値は表示しません。</p><div id="heroGrid"></div></div><div id="detailResult"></div></section></main><script>
+const DATA = {"version": "v7_hidden_engine", "target_hero": {"hero_id": "Soldier76", "hero_ja": "ソルジャー76"}, "tags": [{"key": "rush", "label_ja": "ラッシュ力", "description": "正面から素早く接近して押し切る力"}, {"key": "poke", "label_ja": "ポーク力", "description": "中遠距離から継続してダメージを与える力"}, {"key": "mobility", "label_ja": "機動力（横移動力）", "description": "横方向の位置変更・離脱・接近のしやすさ"}, {"key": "highground", "label_ja": "高台干渉力（縦移動力）", "description": "高台を取る・奪う・触る力"}, {"key": "flanker", "label_ja": "生還能力", "description": "接近後に生きて戻る力、または側面から継続して関与する力"}, {"key": "burst", "label_ja": "瞬間火力", "description": "短時間で大きなダメージを出す力"}, {"key": "sustain", "label_ja": "継続戦闘力", "description": "長い集団戦を続ける力"}, {"key": "frontline", "label_ja": "前衛維持力", "description": "正面の場所を維持する力"}, {"key": "peel", "label_ja": "味方保護力", "description": "味方を守る・救う・接近を止める力"}, {"key": "utility", "label_ja": "妨害・補助力", "description": "回復阻害、無敵、蘇生、速度支援などの影響力"}, {"key": "survivability", "label_ja": "生存力", "description": "倒されにくさ・逃げやすさ"}, {"key": "visor_denial", "label_ja": "タクティカル・バイザー妨害力", "description": "タクティカル・バイザーを止める・逃げる・受け切る力"}, {"key": "threat_soldier", "label_ja": "ソルジャー脅威度", "description": "ソルジャー76本人へ直接圧力をかける力"}, {"key": "threat_support", "label_ja": "サポート脅威度", "description": "味方サポートを狙う・機能不全にする力"}, {"key": "threat_highground", "label_ja": "高台脅威度", "description": "ソルジャーが高台を維持しにくくなる力"}, {"key": "pick_potential", "label_ja": "先制撃破力", "description": "先に1人を撃破できる力"}, {"key": "ult_denial", "label_ja": "アルティメット妨害力", "description": "アルティメットを無効化・軽減・回避する力"}, {"key": "healing_output", "label_ja": "回復力", "description": "味方を回復・維持する力。主にサポートの回復性能を評価する。"}, {"key": "healing_required", "label_ja": "必要回復量", "description": "そのキャラが活躍するために味方から必要としやすい回復量。高いほど味方サポートへの負担が大きい。"}, {"key": "health_pack_access", "label_ja": "ヘルスパック拾いやすさ", "description": "自力でヘルスパックへ移動しやすく、味方サポートの回復負担を減らしやすい度合い。"}], "skills": [{"key": "Primary Fire", "label_ja": "通常射撃"}, {"key": "Helix Rocket", "label_ja": "ヘリックス・ロケット"}, {"key": "Biotic Field", "label_ja": "バイオティック・フィールド"}, {"key": "Sprint", "label_ja": "スプリント"}, {"key": "Tactical Visor", "label_ja": "タクティカル・バイザー"}], "heroes": [{"hero_id": "D.Va", "hero_ja": "D.Va", "role": "タンク", "sub_role": "イニシエーター", "stats": {"rush": 6, "poke": 3, "mobility": 8, "highground": 9, "flanker": 5, "burst": 6, "sustain": 6, "frontline": 7, "peel": 6, "utility": 7, "survivability": 8, "visor_denial": 9, "threat_soldier": 8, "threat_support": 7, "threat_highground": 9, "pick_potential": 4, "ult_denial": 9, "healing_output": 0, "healing_required": 8, "health_pack_access": 7}, "skill_threat": {"Soldier76": {"Primary Fire": 8, "Helix Rocket": 10, "Biotic Field": 2, "Sprint": 4, "Tactical Visor": 10}}, "ult_denial_priority": {"Soldier76": [{"ability": "ディフェンス・マトリックス", "priority": 10, "type": "active_window"}]}}, {"hero_id": "Doomfist", "hero_ja": "ドゥームフィスト", "role": "タンク", "sub_role": "イニシエーター", "stats": {"rush": 6, "poke": 2, "mobility": 9, "highground": 8, "flanker": 6, "burst": 7, "sustain": 5, "frontline": 5, "peel": 4, "utility": 6, "survivability": 8, "visor_denial": 7, "threat_soldier": 9, "threat_support": 8, "threat_highground": 8, "pick_potential": 7, "ult_denial": 7, "healing_output": 0, "healing_required": 7, "health_pack_access": 8}, "skill_threat": {"Soldier76": {"Primary Fire": 7, "Helix Rocket": 5, "Biotic Field": 7, "Sprint": 8, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Hazard", "hero_ja": "ハザード", "role": "タンク", "sub_role": "イニシエーター", "stats": {"rush": 7, "poke": 3, "mobility": 8, "highground": 7, "flanker": 5, "burst": 7, "sustain": 6, "frontline": 6, "peel": 4, "utility": 6, "survivability": 8, "visor_denial": 6, "threat_soldier": 8, "threat_support": 7, "threat_highground": 7, "pick_potential": 7, "ult_denial": 6, "healing_output": 0, "healing_required": 7, "health_pack_access": 7}, "skill_threat": {"Soldier76": {"Primary Fire": 7, "Helix Rocket": 6, "Biotic Field": 6, "Sprint": 7, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Junker Queen", "hero_ja": "ジャンカー・クイーン", "role": "タンク", "sub_role": "ブルーザー", "stats": {"rush": 8, "poke": 3, "mobility": 5, "highground": 3, "flanker": 3, "burst": 7, "sustain": 7, "frontline": 7, "peel": 5, "utility": 7, "survivability": 7, "visor_denial": 5, "threat_soldier": 5, "threat_support": 5, "threat_highground": 4, "pick_potential": 7, "ult_denial": 5, "healing_output": 2, "healing_required": 6, "health_pack_access": 4}, "skill_threat": {"Soldier76": {"Primary Fire": 4, "Helix Rocket": 3, "Biotic Field": 6, "Sprint": 5, "Tactical Visor": 4}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Mauga", "hero_ja": "マウガ", "role": "タンク", "sub_role": "ブルーザー", "stats": {"rush": 7, "poke": 6, "mobility": 3, "highground": 2, "flanker": 1, "burst": 7, "sustain": 9, "frontline": 9, "peel": 5, "utility": 6, "survivability": 8, "visor_denial": 5, "threat_soldier": 4, "threat_support": 4, "threat_highground": 3, "pick_potential": 6, "ult_denial": 5, "healing_output": 2, "healing_required": 10, "health_pack_access": 2}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 4, "Biotic Field": 5, "Sprint": 5, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Orisa", "hero_ja": "オリーサ", "role": "タンク", "sub_role": "ストルワート", "stats": {"rush": 6, "poke": 5, "mobility": 3, "highground": 2, "flanker": 1, "burst": 6, "sustain": 8, "frontline": 9, "peel": 6, "utility": 7, "survivability": 8, "visor_denial": 6, "threat_soldier": 5, "threat_support": 5, "threat_highground": 3, "pick_potential": 5, "ult_denial": 6, "healing_output": 0, "healing_required": 8, "health_pack_access": 2}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 6, "Biotic Field": 5, "Sprint": 4, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": [{"ability": "ジャベリン・スピン", "priority": 6, "type": "active_window"}, {"ability": "フォーティファイ", "priority": 6, "type": "self_stall"}]}}, {"hero_id": "Ramattra", "hero_ja": "ラマットラ", "role": "タンク", "sub_role": "ブルーザー", "stats": {"rush": 7, "poke": 5, "mobility": 4, "highground": 2, "flanker": 2, "burst": 6, "sustain": 8, "frontline": 8, "peel": 5, "utility": 6, "survivability": 8, "visor_denial": 6, "threat_soldier": 5, "threat_support": 5, "threat_highground": 3, "pick_potential": 6, "ult_denial": 6, "healing_output": 0, "healing_required": 8, "health_pack_access": 3}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 4, "Biotic Field": 6, "Sprint": 5, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": [{"ability": "ヴォイド・バリア", "priority": 6, "type": "barrier"}]}}, {"hero_id": "Reinhardt", "hero_ja": "ラインハルト", "role": "タンク", "sub_role": "ストルワート", "stats": {"rush": 9, "poke": 1, "mobility": 3, "highground": 1, "flanker": 1, "burst": 7, "sustain": 7, "frontline": 9, "peel": 6, "utility": 5, "survivability": 7, "visor_denial": 6, "threat_soldier": 4, "threat_support": 5, "threat_highground": 2, "pick_potential": 6, "ult_denial": 6, "healing_output": 0, "healing_required": 9, "health_pack_access": 2}, "skill_threat": {"Soldier76": {"Primary Fire": 4, "Helix Rocket": 4, "Biotic Field": 5, "Sprint": 4, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": [{"ability": "バリア・フィールド", "priority": 7, "type": "barrier"}]}}, {"hero_id": "Roadhog", "hero_ja": "ロードホッグ", "role": "タンク", "sub_role": "ブルーザー", "stats": {"rush": 5, "poke": 4, "mobility": 3, "highground": 2, "flanker": 2, "burst": 8, "sustain": 8, "frontline": 7, "peel": 5, "utility": 5, "survivability": 8, "visor_denial": 4, "threat_soldier": 6, "threat_support": 5, "threat_highground": 3, "pick_potential": 8, "ult_denial": 4, "healing_output": 4, "healing_required": 6, "health_pack_access": 5}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 3, "Biotic Field": 8, "Sprint": 8, "Tactical Visor": 4}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Sigma", "hero_ja": "シグマ", "role": "タンク", "sub_role": "ストルワート", "stats": {"rush": 3, "poke": 8, "mobility": 2, "highground": 2, "flanker": 1, "burst": 6, "sustain": 8, "frontline": 8, "peel": 7, "utility": 8, "survivability": 8, "visor_denial": 9, "threat_soldier": 6, "threat_support": 6, "threat_highground": 4, "pick_potential": 6, "ult_denial": 9, "healing_output": 0, "healing_required": 6, "health_pack_access": 2}, "skill_threat": {"Soldier76": {"Primary Fire": 8, "Helix Rocket": 10, "Biotic Field": 3, "Sprint": 3, "Tactical Visor": 9}}, "ult_denial_priority": {"Soldier76": [{"ability": "キネティック・グラスプ", "priority": 9, "type": "active_window"}, {"ability": "バリア", "priority": 7, "type": "barrier"}]}}, {"hero_id": "Winston", "hero_ja": "ウィンストン", "role": "タンク", "sub_role": "イニシエーター", "stats": {"rush": 5, "poke": 1, "mobility": 9, "highground": 10, "flanker": 5, "burst": 4, "sustain": 6, "frontline": 6, "peel": 7, "utility": 6, "survivability": 8, "visor_denial": 7, "threat_soldier": 10, "threat_support": 9, "threat_highground": 10, "pick_potential": 4, "ult_denial": 7, "healing_output": 0, "healing_required": 8, "health_pack_access": 8}, "skill_threat": {"Soldier76": {"Primary Fire": 7, "Helix Rocket": 5, "Biotic Field": 8, "Sprint": 8, "Tactical Visor": 7}}, "ult_denial_priority": {"Soldier76": [{"ability": "バリア・プロジェクター", "priority": 7, "type": "barrier"}]}}, {"hero_id": "Wrecking Ball", "hero_ja": "レッキング・ボール", "role": "タンク", "sub_role": "イニシエーター", "stats": {"rush": 4, "poke": 2, "mobility": 10, "highground": 10, "flanker": 7, "burst": 5, "sustain": 6, "frontline": 4, "peel": 3, "utility": 6, "survivability": 9, "visor_denial": 6, "threat_soldier": 9, "threat_support": 9, "threat_highground": 10, "pick_potential": 5, "ult_denial": 6, "healing_output": 0, "healing_required": 5, "health_pack_access": 10}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 3, "Biotic Field": 7, "Sprint": 7, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Zarya", "hero_ja": "ザリア", "role": "タンク", "sub_role": "ブルーザー", "stats": {"rush": 6, "poke": 5, "mobility": 3, "highground": 2, "flanker": 1, "burst": 7, "sustain": 8, "frontline": 8, "peel": 8, "utility": 7, "survivability": 8, "visor_denial": 7, "threat_soldier": 5, "threat_support": 6, "threat_highground": 3, "pick_potential": 6, "ult_denial": 7, "healing_output": 0, "healing_required": 7, "health_pack_access": 3}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 7, "Biotic Field": 5, "Sprint": 4, "Tactical Visor": 7}}, "ult_denial_priority": {"Soldier76": [{"ability": "パーティクル・バリア", "priority": 7, "type": "save"}]}}, {"hero_id": "Ashe", "hero_ja": "アッシュ", "role": "ダメージ", "sub_role": "シャープシューター", "stats": {"rush": 2, "poke": 8, "mobility": 4, "highground": 5, "flanker": 2, "burst": 7, "sustain": 4, "frontline": 2, "peel": 2, "utility": 4, "survivability": 4, "visor_denial": 3, "threat_soldier": 5, "threat_support": 4, "threat_highground": 4, "pick_potential": 8, "ult_denial": 3, "healing_output": 0, "healing_required": 4, "health_pack_access": 4}, "skill_threat": {"Soldier76": {"Primary Fire": 7, "Helix Rocket": 3, "Biotic Field": 5, "Sprint": 4, "Tactical Visor": 4}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Bastion", "hero_ja": "バスティオン", "role": "ダメージ", "sub_role": "スペシャリスト", "stats": {"rush": 4, "poke": 7, "mobility": 2, "highground": 2, "flanker": 1, "burst": 9, "sustain": 6, "frontline": 5, "peel": 2, "utility": 3, "survivability": 5, "visor_denial": 3, "threat_soldier": 5, "threat_support": 3, "threat_highground": 2, "pick_potential": 7, "ult_denial": 3, "healing_output": 0, "healing_required": 8, "health_pack_access": 2}, "skill_threat": {"Soldier76": {"Primary Fire": 8, "Helix Rocket": 3, "Biotic Field": 7, "Sprint": 4, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Cassidy", "hero_ja": "キャスディ", "role": "ダメージ", "sub_role": "シャープシューター", "stats": {"rush": 3, "poke": 6, "mobility": 3, "highground": 3, "flanker": 2, "burst": 7, "sustain": 4, "frontline": 2, "peel": 5, "utility": 5, "survivability": 5, "visor_denial": 4, "threat_soldier": 6, "threat_support": 5, "threat_highground": 3, "pick_potential": 7, "ult_denial": 4, "healing_output": 0, "healing_required": 5, "health_pack_access": 3}, "skill_threat": {"Soldier76": {"Primary Fire": 7, "Helix Rocket": 4, "Biotic Field": 5, "Sprint": 5, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Echo", "hero_ja": "エコー", "role": "ダメージ", "sub_role": "リコン", "stats": {"rush": 3, "poke": 5, "mobility": 9, "highground": 9, "flanker": 6, "burst": 8, "sustain": 4, "frontline": 1, "peel": 2, "utility": 4, "survivability": 6, "visor_denial": 4, "threat_soldier": 7, "threat_support": 7, "threat_highground": 8, "pick_potential": 7, "ult_denial": 4, "healing_output": 0, "healing_required": 5, "health_pack_access": 7}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 5, "Biotic Field": 8, "Sprint": 6, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Freja", "hero_ja": "フレイヤ", "role": "ダメージ", "sub_role": "シャープシューター", "stats": {"rush": 3, "poke": 7, "mobility": 7, "highground": 7, "flanker": 5, "burst": 8, "sustain": 4, "frontline": 1, "peel": 2, "utility": 4, "survivability": 5, "visor_denial": 4, "threat_soldier": 7, "threat_support": 6, "threat_highground": 7, "pick_potential": 8, "ult_denial": 4, "healing_output": 0, "healing_required": 5, "health_pack_access": 6}, "skill_threat": {"Soldier76": {"Primary Fire": 7, "Helix Rocket": 5, "Biotic Field": 6, "Sprint": 6, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Genji", "hero_ja": "ゲンジ", "role": "ダメージ", "sub_role": "フランカー", "stats": {"rush": 4, "poke": 2, "mobility": 9, "highground": 8, "flanker": 9, "burst": 7, "sustain": 4, "frontline": 1, "peel": 3, "utility": 5, "survivability": 6, "visor_denial": 8, "threat_soldier": 9, "threat_support": 9, "threat_highground": 8, "pick_potential": 7, "ult_denial": 8, "healing_output": 0, "healing_required": 5, "health_pack_access": 8}, "skill_threat": {"Soldier76": {"Primary Fire": 7, "Helix Rocket": 10, "Biotic Field": 4, "Sprint": 7, "Tactical Visor": 10}}, "ult_denial_priority": {"Soldier76": [{"ability": "木の葉返し", "priority": 10, "type": "active_window"}]}}, {"hero_id": "Hanzo", "hero_ja": "ハンゾー", "role": "ダメージ", "sub_role": "シャープシューター", "stats": {"rush": 2, "poke": 7, "mobility": 5, "highground": 5, "flanker": 3, "burst": 9, "sustain": 4, "frontline": 1, "peel": 2, "utility": 5, "survivability": 5, "visor_denial": 4, "threat_soldier": 6, "threat_support": 5, "threat_highground": 5, "pick_potential": 9, "ult_denial": 4, "healing_output": 0, "healing_required": 4, "health_pack_access": 5}, "skill_threat": {"Soldier76": {"Primary Fire": 8, "Helix Rocket": 3, "Biotic Field": 6, "Sprint": 5, "Tactical Visor": 4}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Junkrat", "hero_ja": "ジャンクラット", "role": "ダメージ", "sub_role": "スペシャリスト", "stats": {"rush": 5, "poke": 4, "mobility": 5, "highground": 5, "flanker": 4, "burst": 8, "sustain": 4, "frontline": 2, "peel": 4, "utility": 7, "survivability": 5, "visor_denial": 3, "threat_soldier": 6, "threat_support": 6, "threat_highground": 5, "pick_potential": 7, "ult_denial": 3, "healing_output": 0, "healing_required": 4, "health_pack_access": 5}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 4, "Biotic Field": 8, "Sprint": 7, "Tactical Visor": 4}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Mei", "hero_ja": "メイ", "role": "ダメージ", "sub_role": "スペシャリスト", "stats": {"rush": 7, "poke": 4, "mobility": 3, "highground": 2, "flanker": 2, "burst": 5, "sustain": 8, "frontline": 6, "peel": 8, "utility": 8, "survivability": 8, "visor_denial": 7, "threat_soldier": 6, "threat_support": 6, "threat_highground": 3, "pick_potential": 5, "ult_denial": 7, "healing_output": 5, "healing_required": 3, "health_pack_access": 4}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 5, "Biotic Field": 8, "Sprint": 8, "Tactical Visor": 7}}, "ult_denial_priority": {"Soldier76": [{"ability": "アイス・ウォール", "priority": 8, "type": "wall"}, {"ability": "クリオフリーズ", "priority": 7, "type": "self_stall"}]}}, {"hero_id": "Pharah", "hero_ja": "ファラ", "role": "ダメージ", "sub_role": "リコン", "stats": {"rush": 3, "poke": 6, "mobility": 8, "highground": 9, "flanker": 4, "burst": 7, "sustain": 4, "frontline": 1, "peel": 2, "utility": 4, "survivability": 5, "visor_denial": 4, "threat_soldier": 5, "threat_support": 6, "threat_highground": 8, "pick_potential": 6, "ult_denial": 4, "healing_output": 0, "healing_required": 7, "health_pack_access": 6}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 4, "Biotic Field": 6, "Sprint": 4, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Reaper", "hero_ja": "リーパー", "role": "ダメージ", "sub_role": "フランカー", "stats": {"rush": 7, "poke": 1, "mobility": 5, "highground": 3, "flanker": 7, "burst": 8, "sustain": 6, "frontline": 4, "peel": 3, "utility": 4, "survivability": 7, "visor_denial": 4, "threat_soldier": 6, "threat_support": 7, "threat_highground": 3, "pick_potential": 7, "ult_denial": 4, "healing_output": 3, "healing_required": 4, "health_pack_access": 7}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 4, "Biotic Field": 8, "Sprint": 6, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": [{"ability": "レイス・フォーム", "priority": 7, "type": "self_escape"}]}}, {"hero_id": "Sojourn", "hero_ja": "ソジョーン", "role": "ダメージ", "sub_role": "シャープシューター", "stats": {"rush": 3, "poke": 8, "mobility": 7, "highground": 6, "flanker": 3, "burst": 8, "sustain": 4, "frontline": 1, "peel": 2, "utility": 4, "survivability": 5, "visor_denial": 4, "threat_soldier": 7, "threat_support": 5, "threat_highground": 6, "pick_potential": 8, "ult_denial": 4, "healing_output": 0, "healing_required": 5, "health_pack_access": 7}, "skill_threat": {"Soldier76": {"Primary Fire": 8, "Helix Rocket": 4, "Biotic Field": 6, "Sprint": 5, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Soldier: 76", "hero_ja": "ソルジャー76", "role": "ダメージ", "sub_role": "シャープシューター", "stats": {"rush": 3, "poke": 7, "mobility": 6, "highground": 7, "flanker": 3, "burst": 6, "sustain": 5, "frontline": 2, "peel": 3, "utility": 3, "survivability": 6, "visor_denial": 2, "threat_soldier": 5, "threat_support": 4, "threat_highground": 6, "pick_potential": 6, "ult_denial": 2, "healing_output": 4, "healing_required": 4, "health_pack_access": 7}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 6, "Biotic Field": 5, "Sprint": 5, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Sombra", "hero_ja": "ソンブラ", "role": "ダメージ", "sub_role": "フランカー", "stats": {"rush": 3, "poke": 2, "mobility": 9, "highground": 7, "flanker": 10, "burst": 6, "sustain": 3, "frontline": 1, "peel": 3, "utility": 9, "survivability": 7, "visor_denial": 7, "threat_soldier": 10, "threat_support": 10, "threat_highground": 7, "pick_potential": 6, "ult_denial": 7, "healing_output": 0, "healing_required": 3, "health_pack_access": 10}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 5, "Biotic Field": 9, "Sprint": 10, "Tactical Visor": 8}}, "ult_denial_priority": {"Soldier76": [{"ability": "EMP", "priority": 8, "type": "ultimate_disable"}, {"ability": "トランズロケーター", "priority": 6, "type": "self_escape"}]}}, {"hero_id": "Symmetra", "hero_ja": "シンメトラ", "role": "ダメージ", "sub_role": "スペシャリスト", "stats": {"rush": 7, "poke": 4, "mobility": 3, "highground": 4, "flanker": 3, "burst": 6, "sustain": 6, "frontline": 5, "peel": 5, "utility": 8, "survivability": 6, "visor_denial": 6, "threat_soldier": 5, "threat_support": 5, "threat_highground": 4, "pick_potential": 5, "ult_denial": 6, "healing_output": 0, "healing_required": 4, "health_pack_access": 4}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 4, "Biotic Field": 7, "Sprint": 7, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": [{"ability": "フォトン・バリア", "priority": 9, "type": "ultimate_barrier"}]}}, {"hero_id": "Torbjörn", "hero_ja": "トールビョーン", "role": "ダメージ", "sub_role": "スペシャリスト", "stats": {"rush": 4, "poke": 6, "mobility": 2, "highground": 3, "flanker": 1, "burst": 6, "sustain": 6, "frontline": 4, "peel": 7, "utility": 7, "survivability": 7, "visor_denial": 5, "threat_soldier": 5, "threat_support": 5, "threat_highground": 4, "pick_potential": 6, "ult_denial": 5, "healing_output": 0, "healing_required": 5, "health_pack_access": 3}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 4, "Biotic Field": 6, "Sprint": 4, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Tracer", "hero_ja": "トレーサー", "role": "ダメージ", "sub_role": "フランカー", "stats": {"rush": 4, "poke": 2, "mobility": 10, "highground": 7, "flanker": 10, "burst": 7, "sustain": 3, "frontline": 1, "peel": 2, "utility": 4, "survivability": 8, "visor_denial": 6, "threat_soldier": 10, "threat_support": 10, "threat_highground": 7, "pick_potential": 7, "ult_denial": 6, "healing_output": 0, "healing_required": 3, "health_pack_access": 10}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 7, "Biotic Field": 6, "Sprint": 8, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": [{"ability": "リコール", "priority": 7, "type": "self_escape"}]}}, {"hero_id": "Venture", "hero_ja": "ベンチャー", "role": "ダメージ", "sub_role": "フランカー", "stats": {"rush": 6, "poke": 2, "mobility": 8, "highground": 7, "flanker": 8, "burst": 8, "sustain": 5, "frontline": 3, "peel": 3, "utility": 5, "survivability": 7, "visor_denial": 5, "threat_soldier": 8, "threat_support": 8, "threat_highground": 7, "pick_potential": 8, "ult_denial": 5, "healing_output": 2, "healing_required": 5, "health_pack_access": 8}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 5, "Biotic Field": 8, "Sprint": 7, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Widowmaker", "hero_ja": "ウィドウメイカー", "role": "ダメージ", "sub_role": "シャープシューター", "stats": {"rush": 1, "poke": 6, "mobility": 4, "highground": 6, "flanker": 2, "burst": 9, "sustain": 2, "frontline": 1, "peel": 1, "utility": 4, "survivability": 4, "visor_denial": 3, "threat_soldier": 6, "threat_support": 4, "threat_highground": 6, "pick_potential": 10, "ult_denial": 3, "healing_output": 0, "healing_required": 3, "health_pack_access": 5}, "skill_threat": {"Soldier76": {"Primary Fire": 9, "Helix Rocket": 2, "Biotic Field": 4, "Sprint": 4, "Tactical Visor": 3}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Ana", "hero_ja": "アナ", "role": "サポート", "sub_role": "タクティシャン", "stats": {"rush": 2, "poke": 8, "mobility": 1, "highground": 2, "flanker": 1, "burst": 4, "sustain": 7, "frontline": 1, "peel": 7, "utility": 9, "survivability": 4, "visor_denial": 7, "threat_soldier": 5, "threat_support": 4, "threat_highground": 3, "pick_potential": 6, "ult_denial": 7, "healing_output": 9, "healing_required": 4, "health_pack_access": 2}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 4, "Biotic Field": 7, "Sprint": 5, "Tactical Visor": 7}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Baptiste", "hero_ja": "バティスト", "role": "サポート", "sub_role": "メディック", "stats": {"rush": 3, "poke": 7, "mobility": 6, "highground": 7, "flanker": 1, "burst": 5, "sustain": 8, "frontline": 2, "peel": 8, "utility": 9, "survivability": 7, "visor_denial": 9, "threat_soldier": 5, "threat_support": 4, "threat_highground": 5, "pick_potential": 5, "ult_denial": 9, "healing_output": 9, "healing_required": 5, "health_pack_access": 5}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 5, "Biotic Field": 5, "Sprint": 4, "Tactical Visor": 9}}, "ult_denial_priority": {"Soldier76": [{"ability": "イモータリティ・フィールド", "priority": 10, "type": "deployable"}]}}, {"hero_id": "Brigitte", "hero_ja": "ブリギッテ", "role": "サポート", "sub_role": "サバイバー", "stats": {"rush": 7, "poke": 1, "mobility": 3, "highground": 2, "flanker": 2, "burst": 4, "sustain": 8, "frontline": 4, "peel": 10, "utility": 8, "survivability": 9, "visor_denial": 7, "threat_soldier": 6, "threat_support": 8, "threat_highground": 3, "pick_potential": 4, "ult_denial": 7, "healing_output": 7, "healing_required": 4, "health_pack_access": 4}, "skill_threat": {"Soldier76": {"Primary Fire": 4, "Helix Rocket": 4, "Biotic Field": 6, "Sprint": 5, "Tactical Visor": 7}}, "ult_denial_priority": {"Soldier76": [{"ability": "ラリー", "priority": 8, "type": "support_ultimate"}]}}, {"hero_id": "Illari", "hero_ja": "イラリー", "role": "サポート", "sub_role": "メディック", "stats": {"rush": 2, "poke": 7, "mobility": 4, "highground": 4, "flanker": 1, "burst": 6, "sustain": 6, "frontline": 1, "peel": 4, "utility": 6, "survivability": 5, "visor_denial": 4, "threat_soldier": 5, "threat_support": 4, "threat_highground": 4, "pick_potential": 6, "ult_denial": 4, "healing_output": 8, "healing_required": 4, "health_pack_access": 4}, "skill_threat": {"Soldier76": {"Primary Fire": 6, "Helix Rocket": 4, "Biotic Field": 5, "Sprint": 4, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Juno", "hero_ja": "ジュノ", "role": "サポート", "sub_role": "メディック", "stats": {"rush": 5, "poke": 5, "mobility": 8, "highground": 8, "flanker": 4, "burst": 4, "sustain": 7, "frontline": 1, "peel": 6, "utility": 8, "survivability": 7, "visor_denial": 6, "threat_soldier": 6, "threat_support": 6, "threat_highground": 8, "pick_potential": 4, "ult_denial": 6, "healing_output": 8, "healing_required": 4, "health_pack_access": 7}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 4, "Biotic Field": 5, "Sprint": 5, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Kiriko", "hero_ja": "キリコ", "role": "サポート", "sub_role": "サバイバー", "stats": {"rush": 4, "poke": 5, "mobility": 8, "highground": 7, "flanker": 4, "burst": 7, "sustain": 7, "frontline": 1, "peel": 8, "utility": 10, "survivability": 9, "visor_denial": 9, "threat_soldier": 6, "threat_support": 7, "threat_highground": 7, "pick_potential": 6, "ult_denial": 10, "healing_output": 8, "healing_required": 3, "health_pack_access": 8}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 5, "Biotic Field": 4, "Sprint": 4, "Tactical Visor": 10}}, "ult_denial_priority": {"Soldier76": [{"ability": "鈴のご加護", "priority": 10, "type": "cleanse_invuln"}]}}, {"hero_id": "Lifeweaver", "hero_ja": "ライフウィーバー", "role": "サポート", "sub_role": "メディック", "stats": {"rush": 2, "poke": 4, "mobility": 5, "highground": 6, "flanker": 1, "burst": 2, "sustain": 8, "frontline": 1, "peel": 10, "utility": 9, "survivability": 8, "visor_denial": 8, "threat_soldier": 4, "threat_support": 5, "threat_highground": 6, "pick_potential": 2, "ult_denial": 8, "healing_output": 9, "healing_required": 3, "health_pack_access": 5}, "skill_threat": {"Soldier76": {"Primary Fire": 3, "Helix Rocket": 6, "Biotic Field": 4, "Sprint": 5, "Tactical Visor": 8}}, "ult_denial_priority": {"Soldier76": [{"ability": "ライフグリップ", "priority": 8, "type": "save"}, {"ability": "ペタル・プラットフォーム", "priority": 6, "type": "position_shift"}]}}, {"hero_id": "Lúcio", "hero_ja": "ルシオ", "role": "サポート", "sub_role": "サバイバー", "stats": {"rush": 9, "poke": 2, "mobility": 9, "highground": 6, "flanker": 5, "burst": 3, "sustain": 7, "frontline": 2, "peel": 8, "utility": 9, "survivability": 9, "visor_denial": 8, "threat_soldier": 6, "threat_support": 8, "threat_highground": 6, "pick_potential": 3, "ult_denial": 8, "healing_output": 6, "healing_required": 4, "health_pack_access": 9}, "skill_threat": {"Soldier76": {"Primary Fire": 4, "Helix Rocket": 4, "Biotic Field": 5, "Sprint": 7, "Tactical Visor": 9}}, "ult_denial_priority": {"Soldier76": [{"ability": "サウンド・バリア", "priority": 10, "type": "support_ultimate"}]}}, {"hero_id": "Mercy", "hero_ja": "マーシー", "role": "サポート", "sub_role": "メディック", "stats": {"rush": 3, "poke": 2, "mobility": 8, "highground": 7, "flanker": 2, "burst": 1, "sustain": 8, "frontline": 1, "peel": 7, "utility": 10, "survivability": 8, "visor_denial": 7, "threat_soldier": 4, "threat_support": 6, "threat_highground": 7, "pick_potential": 1, "ult_denial": 7, "healing_output": 9, "healing_required": 3, "health_pack_access": 8}, "skill_threat": {"Soldier76": {"Primary Fire": 2, "Helix Rocket": 5, "Biotic Field": 3, "Sprint": 4, "Tactical Visor": 7}}, "ult_denial_priority": {"Soldier76": [{"ability": "蘇生", "priority": 7, "type": "rez_after_kill"}, {"ability": "ヴァルキリー", "priority": 6, "type": "support_ultimate"}]}}, {"hero_id": "Moira", "hero_ja": "モイラ", "role": "サポート", "sub_role": "サバイバー", "stats": {"rush": 5, "poke": 2, "mobility": 7, "highground": 3, "flanker": 4, "burst": 4, "sustain": 8, "frontline": 1, "peel": 5, "utility": 5, "survivability": 9, "visor_denial": 5, "threat_soldier": 5, "threat_support": 5, "threat_highground": 3, "pick_potential": 4, "ult_denial": 5, "healing_output": 9, "healing_required": 3, "health_pack_access": 8}, "skill_threat": {"Soldier76": {"Primary Fire": 4, "Helix Rocket": 5, "Biotic Field": 6, "Sprint": 5, "Tactical Visor": 5}}, "ult_denial_priority": {"Soldier76": [{"ability": "フェード", "priority": 7, "type": "self_escape"}]}}, {"hero_id": "Wuyang", "hero_ja": "ウーヤン", "role": "サポート", "sub_role": "タクティシャン", "stats": {"rush": 4, "poke": 6, "mobility": 5, "highground": 5, "flanker": 2, "burst": 4, "sustain": 8, "frontline": 2, "peel": 6, "utility": 8, "survivability": 7, "visor_denial": 6, "threat_soldier": 5, "threat_support": 5, "threat_highground": 5, "pick_potential": 4, "ult_denial": 6, "healing_output": 8, "healing_required": 4, "health_pack_access": 6}, "skill_threat": {"Soldier76": {"Primary Fire": 5, "Helix Rocket": 4, "Biotic Field": 5, "Sprint": 5, "Tactical Visor": 6}}, "ult_denial_priority": {"Soldier76": []}}, {"hero_id": "Zenyatta", "hero_ja": "ゼニヤッタ", "role": "サポート", "sub_role": "タクティシャン", "stats": {"rush": 1, "poke": 8, "mobility": 1, "highground": 1, "flanker": 1, "burst": 7, "sustain": 5, "frontline": 1, "peel": 4, "utility": 9, "survivability": 3, "visor_denial": 8, "threat_soldier": 6, "threat_support": 4, "threat_highground": 1, "pick_potential": 7, "ult_denial": 8, "healing_output": 4, "healing_required": 4, "health_pack_access": 2}, "skill_threat": {"Soldier76": {"Primary Fire": 7, "Helix Rocket": 4, "Biotic Field": 7, "Sprint": 3, "Tactical Visor": 9}}, "ult_denial_priority": {"Soldier76": [{"ability": "心頭滅却", "priority": 10, "type": "support_ultimate"}]}}], "maps": [{"id": "none", "name": "未選択", "type": "standard", "features": []}, {"id": "kings_row", "name": "キングス・ロウ", "type": "rush", "features": ["narrow", "corners"]}, {"id": "dorado", "name": "ドラド", "type": "highground", "features": ["highground", "vertical"]}, {"id": "gibraltar", "name": "ウォッチポイント・ジブラルタル", "type": "highground", "features": ["highground", "vertical", "long_sight"]}, {"id": "circuit_royal", "name": "サーキット・ロイヤル", "type": "poke", "features": ["long_sight", "sniper"]}, {"id": "junkertown", "name": "ジャンカータウン", "type": "poke", "features": ["long_sight", "open"]}, {"id": "ilios", "name": "イリオス", "type": "mixed", "features": ["boop", "small_rooms"]}, {"id": "lijiang_tower", "name": "麗江タワー", "type": "rush", "features": ["small_rooms", "boop"]}, {"id": "nepal", "name": "ネパール", "type": "mixed", "features": ["small_rooms", "highground"]}, {"id": "eichenwalde", "name": "アイヒェンヴァルデ", "type": "mixed", "features": ["choke", "highground"]}, {"id": "midtown", "name": "ミッドタウン", "type": "mixed", "features": ["highground", "corners"]}, {"id": "shambali", "name": "シャンバリ・モナステリー", "type": "poke", "features": ["long_sight", "corners"]}, {"id": "suravasa", "name": "スラヴァサ", "type": "flashpoint", "features": ["wide_rotation", "healthpacks"]}, {"id": "new_junk_city", "name": "ニュー・ジャンク・シティ", "type": "flashpoint", "features": ["wide_rotation", "healthpacks"]}], "hero_specific_advice": {"D.Va": {"opening": "D.Vaがいる時は、開幕からヘリックス・ロケットを見せない。ディフェンス・マトリックスを使わせてから撃つ。", "fight": "D.Vaがブースターで高台へ来たら、倒し切るより先に1段下がる。マトリックス中は撃ち切らず、切れ目に通常射撃とヘリックス・ロケットを合わせる。", "forbidden": "ディフェンス・マトリックス中にヘリックス・ロケットやタクティカル・バイザーを使わない。"}, "Winston": {"opening": "ウィンストンがいる時は、逃げ道のない最上段高台を使わない。ジャンプ先を見てから下がり撃ちする。", "fight": "ジャンプ・パック使用後の着地地点を撃つ。バリア内に入って追わず、バリア外へ出て射線を作り直す。", "forbidden": "ウィンストンのバリア内で撃ち合い続けない。"}, "Genji": {"opening": "ゲンジがいる時は、ヘリックス・ロケットを先に撃たない。木の葉返しを見てから使う。", "fight": "風斬りで入ってきた後の移動先を撃つ。近距離で追わず、味方の近くへ引きながら削る。", "forbidden": "木の葉返しへヘリックス・ロケットを撃たない。"}, "Tracer": {"opening": "トレーサーがいる時は、味方サポートから離れすぎない。リコール前に深追いしない。", "fight": "リコールを使わせた後だけ強く出る。ブリンク後の着地点に短く射撃を置く。", "forbidden": "瀕死のトレーサーを単独で深追いしない。"}, "Sombra": {"opening": "ソンブラがいる時は、開幕から単独行動しない。ハックされた後にバイオティック・フィールドを焦って使わない。", "fight": "ソンブラが味方サポートへ出た瞬間に前衛撃ちをやめて振り向く。逃げた方向を追いすぎず再接近を警戒する。", "forbidden": "ハック直後に前へ出ない。"}, "Widowmaker": {"opening": "ウィドウメイカーがいる時は、開幕の初回ピークを短くする。位置確認だけしてすぐ遮蔽へ戻る。", "fight": "長射線では撃ち合わず、中距離へ詰めてスコープを使いづらくする。グラップリング・フック後が攻撃タイミング。", "forbidden": "同じ角から3秒以上顔を出さない。"}, "Hanzo": {"opening": "ハンゾーがいる時は、同じ場所から連続で顔を出さない。鳴響矢水を受けたら射線を変える。", "fight": "中距離で短い撃ち合いを繰り返す。嵐ノ矢中は遮蔽へ戻る。", "forbidden": "長い射線で静止して撃ち合わない。"}, "Kiriko": {"opening": "キリコがいる時は、鈴のご加護を使わせるまでタクティカル・バイザーを温存する。", "fight": "鈴のご加護使用後にヘリックス・ロケットかタクティカル・バイザーを合わせる。神出鬼没後は移動先を読む。", "forbidden": "鈴のご加護が残っている状態でバイザーを使わない。"}, "Lúcio": {"opening": "ルシオがいる時は、ラッシュの接近タイミングを警戒する。スピードブーストが見えたら撃つより先に下がる。", "fight": "サウンド・バリア使用後までタクティカル・バイザーを温存する。壁走り中は追いすぎず着地先を撃つ。", "forbidden": "サウンド・バリアが残っている状態でバイザーを使わない。"}, "Zenyatta": {"opening": "ゼニヤッタがいる時は、不和のオーブが付いたら遮蔽へ戻る。長く顔を出さない。", "fight": "ゼニヤッタへ別射線を作る。不和中は撃ち合わず、外れてから再ピークする。", "forbidden": "心頭滅却が残っている状態でバイザーを使わない。"}, "Baptiste": {"opening": "バティストがいる時は、イモータリティ・フィールドを壊す意識を持つ。タンク撃ちだけで終わらない。", "fight": "イモータリティ・フィールドを出させてから、装置を壊す。装置破壊後にヘリックス・ロケットを使う。", "forbidden": "イモータリティ・フィールドを無視して撃ち続けない。"}, "Mercy": {"opening": "マーシーがいる時は、支援先を先に確認する。撃破後はキルした位置を監視する。", "fight": "蘇生の可能性がある場所を撃つ。マーシー本体を深追いしすぎず、支援先も削る。", "forbidden": "キルした位置を見ずに次の敵へ移らない。"}}};
+const heroes = DATA.heroes;
+const byId = Object.fromEntries(heroes.map(h=>[h.hero_id,h]));
+const roles = {
+tank: heroes.filter(h=>h.role==='タンク'),
+dps: heroes.filter(h=>h.role==='ダメージ'),
+sup: heroes.filter(h=>h.role==='サポート')
+};
+const RULE_TABLE = {"version": "diagnosis_rule_table_v1", "purpose": "全タグとskill_threatからソルジャー76の具体行動を生成する内部診断エンジン", "visibility": "internal_only", "sections": ["opening_actions", "fight_plan", "shooting_order", "peak_timing", "visor_conditions", "forbidden_actions", "priority_targets"], "rules": [{"id": "highground_threat_opening", "condition": "avg(threat_highground) >= 6.5 OR avg(highground) >= 7", "output_section": "opening_actions", "text": "開幕から最上段高台へ単独で上がらない。味方の射線が届く中段高台か、すぐ降りられる高台から開始する。"}, {"id": "poke_pick_peak", "condition": "avg(pick_potential) >= 6.5 OR avg(poke) >= 6.5", "output_section": "peak_timing", "text": "同じ場所から3秒以上顔を出さない。1回のピークは確認、射撃、即退避までを短く行う。"}, {"id": "heal_heavy_shoot_order", "condition": "avg(healing_output) >= 6.5", "output_section": "shooting_order", "text": "敵タンクを撃ち続けず、最初に敵サポートへ射線を通す。回復アビリティを使わせてから前衛かHPの少ない敵へ切り替える。"}, {"id": "heal_required_pressure", "condition": "avg(healing_required) >= 6.8 AND avg(health_pack_access) < 6.5", "output_section": "fight_plan", "text": "敵前衛は回復依存度が高い。前衛を削って敵サポートの視線を固定し、その直後に別射線からサポートを撃つ。"}, {"id": "health_pack_reset", "condition": "avg(health_pack_access) >= 7", "output_section": "fight_plan", "text": "削った敵を深追いしすぎない。ヘルスパックへ逃げられた後の再接近を警戒し、逃げ先ではなく次に出てくる位置を撃つ。"}, {"id": "visor_denial", "condition": "sum(skill_threat.Tactical Visor) >= 34 OR avg(ult_denial) >= 6.5", "output_section": "visor_conditions", "text": "タクティカル・バイザーは敵の防御アビリティが残っている間は使わない。無敵、吸収、バリア、サウンド・バリア、心頭滅却の使用後を待つ。"}, {"id": "helix_threat", "condition": "sum(skill_threat.Helix Rocket) >= 34", "output_section": "fight_plan", "text": "ヘリックス・ロケットを開幕で撃たない。反射、吸収、無敵、バリアの使用後に、逃げる敵か接近してくる敵へ使う。"}, {"id": "biotic_threat", "condition": "sum(skill_threat.Biotic Field) >= 32", "output_section": "forbidden_actions", "text": "バイオティック・フィールドを被弾してから慌てて置かない。接近される前に置くか、置いた瞬間に味方側へ下がる。"}, {"id": "support_threat_peel", "condition": "avg(threat_support) >= 6.5", "output_section": "fight_plan", "text": "味方サポートを狙う敵を先に撃つ。サポートが襲われてから戻るのではなく、襲われる前に逃げ道を残しておく。"}, {"id": "soldier_pressure_survival", "condition": "avg(threat_soldier) >= 6.5", "output_section": "forbidden_actions", "text": "単独で横へ広がりすぎない。1対1を作るより、味方の射線へ逃げられる位置で撃つ。"}]};
+function hasHero(selected, id){
+return selected.some(h => h.hero_id === id || h.hero_ja === id);
+}
+function avgVal(selected, key){
+return selected.reduce((a,h)=>a+(h.stats[key]||0),0) / selected.length;
+}
+function sumThreat(selected, skill){
+return selected.reduce((a,h)=>a+(h.skill_threat?.Soldier76?.[skill]||0),0);
+}
+function topBy(selected, key, count=3){
+return [...selected].sort((a,b)=>(b.stats[key]||0)-(a.stats[key]||0)).slice(0,count);
+}
+function supportHeroes(selected){
+return selected.filter(h=>h.role==='サポート');
+}
+function chooseMainPlan(selected){
+const highground = avgVal(selected,'threat_highground');
+const soldier = avgVal(selected,'threat_soldier');
+const support = avgVal(selected,'threat_support');
+const poke = avgVal(selected,'poke');
+const rush = avgVal(selected,'rush');
+const heal = avgVal(selected,'healing_output');
+const pick = avgVal(selected,'pick_potential');
+if(highground >= 7 || soldier >= 7){
+return '生存優先型';
+}
+if(poke >= 6.5 || pick >= 6.5){
+return '短時間ピーク型';
+}
+if(heal >= 6.5){
+return '回復崩し型';
+}
+if(rush >= 6.5){
+return '引き撃ち型';
+}
+if(support >= 6.5){
+return '護衛型';
+}
+return '標準射線型';
+}
+function openingActions(selected){
+const lines = [];
+const plan = chooseMainPlan(selected);
+if(plan === '生存優先型'){
+lines.push('開幕は最上段高台に単独で立たない。中段高台、または味方サポートの射線が届く高台から撃ち始める。');
+lines.push('敵が接近してきたら、倒し切るより先に1段下がる。バイオティック・フィールドは着地後ではなく、接近を受ける直前に置く。');
+} else if(plan === '短時間ピーク型'){
+lines.push('開幕5秒は敵の射線確認を優先する。長い射線へ出る時は、1回のピークを3秒以内にする。');
+lines.push('敵スナイパーや高火力が見えたら、同じ場所から2回連続で顔を出さない。');
+} else if(plan === '回復崩し型'){
+lines.push('開幕から敵タンクだけを撃たない。敵サポートの位置を確認し、最初の別射線で回復役にダメージを入れる。');
+lines.push('敵サポートが遮蔽へ下がった瞬間に、前衛へ撃ち先を切り替える。');
+} else if(plan === '引き撃ち型'){
+lines.push('開幕は狭い正面通路を避ける。下がり撃ちできる直線と遮蔽がある位置から始める。');
+lines.push('敵がスピードを使って詰めてきたら、その瞬間にヘリックス・ロケットを使わず、相手が遮蔽から出た後に撃つ。');
+} else if(plan === '護衛型'){
+lines.push('開幕は味方サポートから離れすぎない。敵フランカーが見えるまで、逃げ道を1本残して撃つ。');
+lines.push('味方サポートへ向かう敵を見たら、前衛撃ちをやめて先にその敵へ射撃する。');
+} else {
+lines.push('開幕は高台を取り、遮蔽の近くから敵サポートかHPの少ない敵を撃つ。');
+lines.push('敵の重要アビリティを1つ見てから前へ出る。');
+}
+if(hasHero(selected,'Winston') || hasHero(selected,'D.Va') || hasHero(selected,'Wrecking Ball') || hasHero(selected,'Doomfist')){
+lines.push('敵タンクが高台へ来られる構成なので、最初から降り先を決めておく。逃げ道がない高台は使わない。');
+}
+if(hasHero(selected,'Widowmaker') || hasHero(selected,'Hanzo') || hasHero(selected,'Ashe')){
+lines.push('長射線ヒーローがいるため、最初に顔を出す場所を固定しない。撃ったら横へずれる。');
+}
+return unique(lines);
+}
+function shootingOrder(selected){
+const lines = [];
+const sups = supportHeroes(selected);
+const healHigh = avgVal(selected,'healing_output') >= 6.5;
+const threatSupport = avgVal(selected,'threat_support') >= 6.5;
+const highground = avgVal(selected,'threat_highground') >= 6.5;
+const pack = avgVal(selected,'health_pack_access') >= 7;
+if(healHigh && sups.length){
+const targetSup = [...sups].sort((a,b)=>(b.stats.utility+b.stats.healing_output)-(a.stats.utility+a.stats.healing_output))[0];
+lines.push(`1. まず${targetSup.hero_ja}へ射線を通す。倒し切る目的ではなく、回復アビリティか移動アビリティを使わせる。`);
+lines.push('2. サポートが遮蔽へ下がったら、回復を受けにくくなった前衛へ撃ち先を切り替える。');
+lines.push('3. 前衛が下がったら、再びサポートへ戻す。タンク撃ちっぱなしにしない。');
+} else if(healHigh){
+lines.push('1. 回復力が高い敵を先に動かす。倒し切れない相手へ長く撃ち続けず、アビリティを使わせたら撃ち先を変える。');
+lines.push('2. 回復や防御が切れた敵へヘリックス・ロケットを合わせる。');
+} else if(threatSupport){
+const threat = topBy(selected,'threat_support',1)[0];
+lines.push(`1. ${threat.hero_ja}が味方サポートへ向かう前に撃つ。`);
+lines.push('2. 味方サポートが狙われたら、敵前衛ではなく接近してきた敵を優先する。');
+lines.push('3. 追い切れない場合は、倒すよりも追い返すことを優先する。');
+} else if(highground){
+const hg = topBy(selected,'threat_highground',1)[0];
+lines.push(`1. ${hg.hero_ja}が高台へ触るタイミングを待つ。`);
+lines.push('2. 接近アビリティ使用後に射撃し、逃げ先へヘリックス・ロケットを合わせる。');
+lines.push('3. 高台を維持できない場合は、中段へ下がって撃ち続ける。');
+} else {
+const pick = topBy(selected,'pick_potential',1)[0];
+lines.push(`1. 最初は${pick.hero_ja}の射線を確認する。`);
+lines.push('2. 安全な角度からHPの少ない敵へ通常射撃を入れる。');
+lines.push('3. 逃げる敵、または遮蔽へ入る直前の敵へヘリックス・ロケットを使う。');
+}
+if(pack){
+lines.push('補足：敵はヘルスパックで立て直しやすい。逃げた敵を深追いせず、戻ってくる入口を撃つ。');
+}
+return unique(lines);
+}
+function peakTiming(selected){
+const lines = [];
+if(avgVal(selected,'pick_potential') >= 6.5 || avgVal(selected,'poke') >= 6.5){
+lines.push('ピークは3秒以内。1回目は位置確認、2回目は射撃、3回目は使わない。同じ角から3回連続で顔を出さない。');
+}
+if(avgVal(selected,'rush') >= 6.5){
+lines.push('敵が接近アビリティを使う前に長く顔を出さない。相手が詰め始めた瞬間は撃つより下がる。');
+}
+if(avgVal(selected,'threat_highground') >= 6.5){
+lines.push('高台では端に立たない。接近されたら真後ろへ下がらず、横の降り口へ移動する。');
+}
+if(!lines.length){
+lines.push('遮蔽から半身だけ出して撃つ。ヘリックス・ロケットを撃ったら同じ位置に残らない。');
+}
+return unique(lines);
+}
+function getUltDenialAbilities(selected){
+const abilities = [];
+selected.forEach(h=>{
+const list = h.ult_denial_priority?.Soldier76 || [];
+list.forEach(a=>{
+abilities.push({
+hero: h.hero_ja,
+ability: a.ability,
+priority: a.priority || 0,
+type: a.type || 'unknown'
+});
+});
+});
+return abilities.sort((a,b)=>b.priority-a.priority);
+}
+function formatAbilityList(list){
+return list.map(x=>`${x.ability}`).join('、');
+}
+function visorPlan(selected){
+const lines = [];
+const abilities = getUltDenialAbilities(selected);
+const major = abilities.filter(a=>a.priority >= 8);
+const medium = abilities.filter(a=>a.priority >= 6 && a.priority < 8);
+if(major.length === 1){
+const a = major[0];
+lines.push(`使用禁止条件：${a.ability} が残っている間は使わない。`);
+lines.push(`使う条件：${a.ability}を使わせた直後、敵サポートか逃げ遅れたダメージが遮蔽から離れた瞬間に使う。`);
+} else if(major.length === 2){
+lines.push(`使用禁止条件：${formatAbilityList(major)} が両方残っている間は使わない。`);
+lines.push(`使う条件：${formatAbilityList(major)} を両方使わせた後に使う。片方だけ残っている場合は、残ったスキルを持つ敵を狙わない角度から使う。`);
+} else if(major.length >= 3){
+const topTwo = major.slice(0,2);
+const rest = major.slice(2);
+lines.push(`最優先で警戒する防御手段：${formatAbilityList(topTwo)}。`);
+lines.push(`使う条件：${formatAbilityList(topTwo)} を使わせた後に使う。残りの防御手段は、対象をずらすか射線を変えて避ける。`);
+if(rest.length){
+lines.push(`追加で注意：${formatAbilityList(rest)} が残っている場合、タンクではなくサポートか逃げ遅れたダメージを狙う。`);
+}
+} else if(medium.length === 1){
+const a = medium[0];
+lines.push(`注意条件：${a.ability} があるため、正面からのタクティカル・バイザーは避ける。`);
+lines.push(`${a.ability}を使わせた後、またはその影響を受けない別射線から使う。`);
+} else if(medium.length >= 2){
+const names = formatAbilityList(medium.slice(0,2));
+lines.push(`注意条件：${names} によって受け切られる可能性がある。`);
+lines.push(`${names} のうち片方以上を使わせてから、遮蔽から離れた敵を狙う。`);
+} else if(sumThreat(selected,'Tactical Visor') >= 30 || avgVal(selected,'ult_denial') >= 6){
+lines.push('使用禁止条件：敵の回避アビリティや遮蔽位置を確認しないまま先に使わない。');
+lines.push('使う条件：敵の回避アビリティを1つ確認した後、遮蔽から離れた敵を狙える瞬間に使う。');
+} else {
+lines.push('使う条件：敵が遮蔽から離れた瞬間、または敵サポートが移動アビリティを使った直後に使う。');
+lines.push('狙い方：タンクを溶かす目的ではなく、サポートか逃げ遅れたダメージを先に倒す。');
+}
+if(avgVal(selected,'healing_output') >= 6.5){
+lines.push('回復力が高い構成なので、タンクを溶かす目的で使わない。サポートか孤立したダメージを狙う。');
+}
+if(avgVal(selected,'health_pack_access') >= 7){
+lines.push('ヘルスパックへ逃げやすい構成なので、バイザー中に横へ逃げた敵を追いすぎない。中央へ残った敵を優先する。');
+}
+return unique(lines);
+}
+function forbiddenActions(selected){
+const lines = [];
+const abilities = getUltDenialAbilities(selected);
+const major = abilities.filter(a=>a.priority >= 8);
+const medium = abilities.filter(a=>a.priority >= 6 && a.priority < 8);
+if(avgVal(selected,'healing_output') >= 6.5) lines.push('敵タンクを撃ち続けるだけで終わること。回復され続けて集団戦が長引く。');
+if(avgVal(selected,'pick_potential') >= 6.5) lines.push('同じ場所から3秒以上顔を出すこと。先に撃破される危険が高い。');
+if(avgVal(selected,'threat_highground') >= 6.5) lines.push('孤立した最上段高台に居座ること。接近された時に逃げ道がなくなる。');
+if(sumThreat(selected,'Helix Rocket') >= 34) lines.push('ヘリックス・ロケットを開幕で雑に使うこと。反射、吸収、無敵、バリアで価値を消される。');
+if(sumThreat(selected,'Biotic Field') >= 32) lines.push('バイオティック・フィールドを置いた場所で棒立ちすること。回復中でも押し切られる。');
+if(major.length === 1){
+lines.push(`${major[0].ability}が残っている状態でタクティカル・バイザーを使うこと。`);
+} else if(major.length === 2){
+lines.push(`${formatAbilityList(major)}が両方残っている状態でタクティカル・バイザーを使うこと。`);
+} else if(major.length >= 3){
+lines.push(`${formatAbilityList(major.slice(0,2))}が残っている状態でタクティカル・バイザーを使うこと。特にこの2つを先に使わせる。`);
+} else if(medium.length >= 1){
+lines.push(`${formatAbilityList(medium.slice(0,2))}を確認せずにタクティカル・バイザーを使うこと。`);
+} else if(sumThreat(selected,'Tactical Visor') >= 34){
+lines.push('敵の回避アビリティや遮蔽位置を確認せずにタクティカル・バイザーを使うこと。');
+}
+if(!lines.length) lines.push('遮蔽から離れて正面撃ちを続けること。ソルジャーの強みを失う。');
+return unique(lines);
+}
+function priorityTargetsAdvanced(selected){
+const healHigh = avgVal(selected,'healing_output') >= 6.5;
+const supportThreat = avgVal(selected,'threat_support') >= 6.5;
+const highground = avgVal(selected,'threat_highground') >= 6.5;
+let sorted;
+if(healHigh){
+sorted = [...selected].sort((a,b)=>{
+const av=(a.role==='サポート'?10:0)+(a.stats.healing_output||0)+(a.stats.utility||0);
+const bv=(b.role==='サポート'?10:0)+(b.stats.healing_output||0)+(b.stats.utility||0);
+return bv-av;
+});
+} else if(supportThreat){
+sorted = [...selected].sort((a,b)=>(b.stats.threat_support||0)-(a.stats.threat_support||0));
+} else if(highground){
+sorted = [...selected].sort((a,b)=>(b.stats.threat_highground||0)-(a.stats.threat_highground||0));
+} else {
+sorted = [...selected].sort((a,b)=>(b.stats.pick_potential||0)+(b.stats.utility||0)-((a.stats.pick_potential||0)+(a.stats.utility||0)));
+}
+return sorted.slice(0,3);
+}
+function unique(arr){
+return [...new Set(arr)].filter(Boolean);
+}
+function getMapProfile(){
+const id = document.getElementById('map')?.value || 'none';
+return (DATA.maps||[]).find(m=>m.id===id) || (DATA.maps||[])[0] || {id:'none',features:[]};
+}
+function getAllyHeroes(){
+const ids=['allyTank','allySup1','allySup2'].map(id=>document.getElementById(id)?.value).filter(Boolean);
+return ids.map(id=>byId[id]).filter(Boolean);
+}
+function pushUnique(lines, text){
+if(text && !lines.includes(text)) lines.push(text);
+}
+function applyMapAdvice(lines, map, selected){
+if(!map || map.id==='none') return lines;
+if(map.features?.includes('highground')){
+pushUnique(lines, 'このマップは高台の価値が高い。開幕は高台を取るが、敵が高台へ触れる構成なら逃げ先を決めてから撃つ。');
+}
+if(map.features?.includes('long_sight')){
+pushUnique(lines, '長い射線が強いマップなので、正面で撃ち合わず短いピークで体力差を作る。');
+}
+if(map.features?.includes('small_rooms') || map.features?.includes('narrow')){
+pushUnique(lines, '狭い場所が多いマップなので、リーパー、メイ、ラッシュ構成に正面から入らない。外側の射線を使う。');
+}
+if(map.features?.includes('healthpacks')){
+pushUnique(lines, 'ヘルスパックが絡みやすいマップなので、逃げた敵を追い切るより復帰ルートを先に撃つ。');
+}
+return lines;
+}
+function applyAllyAdvice(lines, allies, selected){
+if(!allies.length) return lines;
+const allyTank = allies.find(h=>h.role==='タンク');
+const allySups = allies.filter(h=>h.role==='サポート');
+if(allyTank){
+if(['Winston','D.Va','Wrecking Ball','Doomfist'].includes(allyTank.hero_id)){
+pushUnique(lines, `味方${allyTank.hero_ja}が入る瞬間に合わせて撃つ。先に撃ち始めて敵を下がらせるより、飛び込みと同時にサポートへ射線を通す。`);
+} else if(['Reinhardt','Junker Queen','Ramattra','Mauga'].includes(allyTank.hero_id)){
+pushUnique(lines, `味方${allyTank.hero_ja}が前へ出る前に、敵サポートへ少しダメージを入れて回復の視線を奪う。`);
+} else if(['Sigma','Orisa','Zarya','Roadhog'].includes(allyTank.hero_id)){
+pushUnique(lines, `味方${allyTank.hero_ja}の正面圧に合わせて、ソルジャーは同じ正面ではなく別射線から撃つ。`);
+}
+}
+if(allySups.some(h=>['Ana','Zenyatta','Baptiste'].includes(h.hero_id))){
+pushUnique(lines, '味方サポートは後ろ寄りになりやすい。戻れる位置を残して戦い、孤立した横展開をしない。');
+}
+if(allySups.some(h=>['Lúcio','Juno','Kiriko','Mercy'].includes(h.hero_id))){
+pushUnique(lines, '味方サポートに機動力があるため、短い別射線を作りやすい。ただし回復を受けられない位置まで広がらない。');
+}
+return lines;
+}
+function heroSpecificLines(selected, section){
+const lines=[];
+selected.forEach(h=>{
+const a=DATA.hero_specific_advice?.[h.hero_id];
+if(a?.[section]) pushUnique(lines, a[section]);
+});
+return lines;
+}
+function rankedUnique(lines, max=5){
+const seen=new Set();
+const out=[];
+for(const line of lines){
+const key = line.replace(/[。、\s]/g,'').slice(0,38);
+if(!seen.has(key)){
+seen.add(key);
+out.push(line);
+}
+if(out.length>=max) break;
+}
+return out;
+}
+function showTab(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+document.getElementById(id).classList.remove('hidden');
+document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+}
+function fillSelect(id, list){
+const el=document.getElementById(id);
+el.innerHTML=list.map(h=>`<option value="${h.hero_id}">${h.hero_ja}</option>`).join('');
+}
+fillSelect('tank', roles.tank); fillSelect('dps1', roles.dps); fillSelect('dps2', roles.dps); fillSelect('sup1', roles.sup); fillSelect('sup2', roles.sup);
+function fillOptionalSelect(id, list){
+const el=document.getElementById(id);
+if(!el) return;
+el.innerHTML='<option value="">未選択</option>'+list.map(h=>`<option value="${h.hero_id}">${h.hero_ja}</option>`).join('');
+}
+fillOptionalSelect('allyTank', roles.tank); fillOptionalSelect('allySup1', roles.sup); fillOptionalSelect('allySup2', roles.sup);
+const mapSelect=document.getElementById('map');
+if(mapSelect){ mapSelect.innerHTML=(DATA.maps||[]).map(m=>`<option value="${m.id}">${m.name}</option>`).join(''); }
+function avg(selected, key){ return selected.reduce((a,h)=>a+(h.stats[key]||0),0)/selected.length; }
+function sumSkill(selected, key){ return selected.reduce((a,h)=>a+(h.skill_threat?.Soldier76?.[key]||0),0); }
+function levelText(score){
+if(score>=8) return '非常に高い';
+if(score>=6.5) return '高い';
+if(score>=5) return '標準以上';
+if(score>=3) return '低め';
+return 'かなり低い';
+}
+function compType(selected){
+const rush=avg(selected,'rush'), poke=avg(selected,'poke'), move=(avg(selected,'mobility')+avg(selected,'highground')+avg(selected,'flanker'))/3;
+if(move>=6.7 && rush>=5) return '機動戦寄りの接近構成';
+if(rush>=6.5) return 'ラッシュ寄りの接近構成';
+if(poke>=6.3) return '中遠距離主体の構成';
+if(avg(selected,'sustain')>=7) return '継続戦闘寄りの構成';
+return '混合構成';
+}
+function mainRisks(selected){
+const risks=[];
+if(avg(selected,'threat_highground')>=6.5) risks.push('高台を維持しにくい');
+if(avg(selected,'threat_soldier')>=6.5) risks.push('ソルジャー本人へ圧力が来やすい');
+if(avg(selected,'threat_support')>=6.5) risks.push('味方サポートが狙われやすい');
+if(avg(selected,'pick_potential')>=6.5) risks.push('長く顔を出すと先に撃破されやすい');
+if(avg(selected,'ult_denial')>=6.5 || sumSkill(selected,'Tactical Visor')>=34) risks.push('タクティカル・バイザーを通しにくい');
+if(sumSkill(selected,'Helix Rocket')>=34) risks.push('ヘリックス・ロケットを雑に使いにくい');
+if(sumSkill(selected,'Biotic Field')>=32) risks.push('バイオティック・フィールド中でも押し切られやすい');
+if(avg(selected,'healing_output')>=6.5) risks.push('敵の回復力が高く、削り切る前に立て直されやすい');
+if(avg(selected,'healing_required')>=6.8 && avg(selected,'health_pack_access')<6.5) risks.push('敵前衛が多くの回復を必要とするため、敵サポートへ負担をかける価値が高い');
+if(avg(selected,'health_pack_access')>=7) risks.push('機動力でヘルスパックを拾いやすく、削った敵を逃すと立て直されやすい');
+return risks.length?risks:['極端な弱点は少ないが、構成に合わせた位置取りが必要'];
+}
+function soldierRole(selected){
+const lines=[];
+const type=compType(selected);
+if(type.includes('接近')) {
+lines.push('単独で高台に残らず、味方の射線が届く位置で戦う。');
+lines.push('飛び込みを受けたら下がりながら撃ち、味方の火力へ誘導する。');
+} else if(type.includes('中遠距離')) {
+lines.push('長い射線で真正面から撃ち合わず、短時間だけ顔を出す。');
+lines.push('別射線を作り、敵サポートへ継続してプレッシャーを与える。');
+} else if(type.includes('継続')) {
+lines.push('正面の前衛だけを撃たず、回復や防御アビリティを使わせる。');
+lines.push('タクティカル・バイザーは防御アビリティ使用後まで待つ。');
+} else {
+lines.push('高台を取り直しながら、狙いやすい敵から体力を削る。');
+lines.push('相手の強い時間を避けて、短い撃ち合いを繰り返す。');
+}
+if(avg(selected,'threat_support')>=6.5) lines.push('味方サポートの近くに戻れる逃げ道を残す。');
+if(sumSkill(selected,'Tactical Visor')>=34) lines.push('タクティカル・バイザーは敵の防御アビリティを確認してから使う。');
+if(sumSkill(selected,'Helix Rocket')>=34) lines.push('ヘリックス・ロケットは反射・吸収・無敵の後に使う。');
+if(avg(selected,'healing_output')>=6.5) lines.push('敵サポートを動かし、回復が届かないタイミングで攻撃する。');
+if(avg(selected,'healing_required')>=6.8 && avg(selected,'health_pack_access')<6.5) lines.push('敵前衛を撃ち続けるだけで終わらず、回復しているサポートへ別射線を作る。');
+if(avg(selected,'health_pack_access')>=7) lines.push('削った敵を深追いしすぎず、ヘルスパック側へ逃げた後の再接近を警戒する。');
+return lines;
+}
+function priorityTargets(selected){
+return [...selected].sort((a,b)=>{
+const av=(a.stats.utility+a.stats.survivability+a.stats.ult_denial);
+const bv=(b.stats.utility+b.stats.survivability+b.stats.ult_denial);
+return bv-av;
+}).slice(0,3);
+}
+function diagnose(){
+const ids=['tank','dps1','dps2','sup1','sup2'].map(id=>document.getElementById(id).value);
+const selected=ids.map(id=>byId[id]);
+const map=getMapProfile();
+const allies=getAllyHeroes();
+const type=compType(selected);
+const plan=chooseMainPlan(selected);
+let opening=[...heroSpecificLines(selected,'opening'), ...openingActions(selected)];
+opening=applyMapAdvice(opening,map,selected);
+opening=applyAllyAdvice(opening,allies,selected);
+opening=rankedUnique(opening,6);
+let order=[...shootingOrder(selected), ...heroSpecificLines(selected,'fight')];
+order=applyAllyAdvice(order,allies,selected);
+order=rankedUnique(order,7);
+let peak=peakTiming(selected);
+peak=applyMapAdvice(peak,map,selected);
+peak=rankedUnique(peak,5);
+let visor=rankedUnique(visorPlan(selected),6);
+let forbidden=[...heroSpecificLines(selected,'forbidden'), ...forbiddenActions(selected)];
+forbidden=rankedUnique(forbidden,7);
+const targets=priorityTargetsAdvanced(selected);
+document.getElementById('result').innerHTML = `
+<div class="card"><h2>構成評価</h2><div class="grid"><div class="kpi"><div class="name">構成タイプ</div><div class="value">${type}</div></div><div class="kpi"><div class="name">ソルジャーの戦い方</div><div class="value">${plan}</div></div><div class="kpi"><div class="name">マップ補正</div><div class="value">${map?.name || '未選択'}</div></div><div class="kpi"><div class="name">味方構成補正</div><div class="value">${allies.length ? allies.map(h=>h.hero_ja).join(' / ') : '未選択'}</div></div></div><h3>① 開幕行動</h3><ul>${opening.map(x=>`<li>${x}</li>`).join('')}</ul><h3>② 撃つ順番</h3><ul>${order.map(x=>`<li>${x}</li>`).join('')}</ul><h3>③ ピークするタイミング</h3><ul>${peak.map(x=>`<li>${x}</li>`).join('')}</ul><h3>④ タクティカル・バイザー使用条件</h3><ul>${visor.map(x=>`<li>${x}</li>`).join('')}</ul><h3>⑤ 絶対にやってはいけないこと</h3><ul>${forbidden.map(x=>`<li>${x}</li>`).join('')}</ul><h3>優先して意識する敵</h3>
+${targets.map((h,i)=>`<span class="pill">${i+1}. ${h.hero_ja}</span>`).join('')}
+<p class="small">※内部のタグ数値とスキル脅威度は非表示です。</p></div>`;
+}
+function buildHeroGrid(){
+const wrap=document.getElementById('heroGrid');
+const roleOrder=['タンク','ダメージ','サポート'];
+wrap.innerHTML=roleOrder.map(role=>{
+const list=heroes.filter(h=>h.role===role);
+const groups=[...new Set(list.map(h=>h.sub_role))];
+return `<div class="roleTitle">${role}</div>`+groups.map(g=>{
+const members=list.filter(h=>h.sub_role===g);
+return `<h3>${g}</h3><div class="heroGrid">${members.map(h=>`<button class="heroBtn" onclick="showHero('${h.hero_id}', this)"><div class="pixel">${h.hero_ja[0]}</div><div class="heroName">${h.hero_ja}</div></button>`).join('')}</div>`;
+}).join('');
+}).join('');
+}
+buildHeroGrid();
+function showHero(id, btn){
+document.querySelectorAll('.heroBtn').forEach(b=>b.classList.remove('active'));
+if(btn) btn.classList.add('active');
+const h=byId[id];
+const fake=[h, byId['Soldier: 76']].filter(Boolean);
+const skillEntries = Object.entries(h.skill_threat.Soldier76).sort((a,b)=>b[1]-a[1]);
+const mainThreat = skillEntries[0][0];
+const label = DATA.skills.find(s=>s.key===mainThreat)?.label_ja || mainThreat;
+const caution = [];
+if(h.stats.threat_highground>=7) caution.push('高台を取り返されやすい。最上段に居座らず、降り口のある位置から撃つ。');
+if(h.stats.threat_soldier>=7) caution.push('ソルジャー本人へ接近されやすい。1対1を受けず、味方の射線へ下がる。');
+if(h.stats.pick_potential>=7) caution.push('先に撃破される危険が高い。同じ角から3秒以上顔を出さない。');
+if(h.stats.healing_output>=7) caution.push('回復力が高い。単独で倒し切らず、回復アビリティ使用後に再度撃つ。');
+if(h.stats.health_pack_access>=8) caution.push('ヘルスパックで立て直されやすい。逃げた敵を追いすぎず、戻り道を撃つ。');
+if(h.stats.ult_denial>=7) caution.push('タクティカル・バイザーを妨害されやすい。重要アビリティ使用後まで待つ。');
+if(!caution.length) caution.push('遮蔽の近くで中距離から継続してダメージを与える。');
+let useTiming = '';
+if(mainThreat==='Helix Rocket') useTiming='ヘリックス・ロケットは先撃ちせず、相手の回避・防御アビリティを見てから使う。';
+else if(mainThreat==='Tactical Visor') useTiming='タクティカル・バイザーは相手の防御アビリティ使用後、または対象が遮蔽から離れた瞬間に使う。';
+else if(mainThreat==='Biotic Field') useTiming='バイオティック・フィールドは削られてからではなく、接近される直前に置く。';
+else if(mainThreat==='Sprint') useTiming='スプリントで逃げるだけでは追いつかれやすい。遮蔽と味方射線へ逃げる。';
+else useTiming='通常射撃で長く撃ち合わず、短いピークで体力差を作る。';
+document.getElementById('detailResult').innerHTML=`
+<div class="card"><h2>${h.hero_ja}</h2><div><span class="pill">${h.role}</span><span class="pill">${h.sub_role}</span></div><h3>ソルジャー視点の具体的な注意点</h3><ul>${caution.map(c=>`<li>${c}</li>`).join('')}</ul><h3>特に価値を下げられやすいアビリティ</h3><p class="note">${label}。${useTiming}</p><h3>撃ち方</h3><ul><li>最初は通常射撃で体力差を作る。</li><li>相手の移動・防御アビリティを見た後にヘリックス・ロケットを使う。</li><li>倒し切れない場合は深追いせず、次に顔を出す位置を撃つ。</li></ul></div>`;
+}
+diagnose();
+</script></body></html>
