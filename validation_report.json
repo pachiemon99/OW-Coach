@@ -1,0 +1,66 @@
+{
+  "status": "ok",
+  "release": "owcoach_public_release_v13_github_pages",
+  "base": "owcoach_integrated_soldier_sojourn_v12_official_skill_names_app",
+  "public_files_count": 5,
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 673,
+      "sha256": "bae2656cd6202cffaf0db8c875b5779663d27aa48a4d0984b8abc2a0c61514d1"
+    },
+    {
+      "name": "index.html",
+      "bytes": 195492,
+      "sha256": "321e8cd04eb167f0d5cbb8c9a0c286a1fdcfbc85bbeaaaac2f62107d211b9b85"
+    },
+    {
+      "name": "robots.txt",
+      "bytes": 64,
+      "sha256": "4845d5e4799d71a5ea278efa6fe41e8d9982a3013419afe2f02f5979d6be6525"
+    },
+    {
+      "name": "sitemap.xml",
+      "bytes": 261,
+      "sha256": "544acd87390085f793c25192ca0775a1eaa4b95a293ce8fae844d5ea3ece03d5"
+    },
+    {
+      "name": "validation_report.json",
+      "bytes": 1931,
+      "sha256": "da77e864c5a6a79c2fc7d356ed7cc170d8068af51c536211845688ac658171a2"
+    }
+  ],
+  "analytics_and_clarity": {
+    "ga_script_count": 1,
+    "ga_measurement_ids": [
+      "G-1B0GD9029Q"
+    ],
+    "gtag_config_ids": [
+      "G-1B0GD9029Q"
+    ],
+    "clarity_script_count": 1,
+    "clarity_project_ids": [
+      "x9udv4ffit"
+    ],
+    "ga_in_head": true,
+    "clarity_in_head": true,
+    "no_lucio_speed_boost": true,
+    "no_highground_old_terms": true,
+    "public_badge_present": true,
+    "stale_v11_badge_count": 0,
+    "js_syntax_ok": true,
+    "js_syntax_output": "",
+    "data_parse_ok": true,
+    "data_version": "owcoach_public_release_v13_github_pages",
+    "implemented_targets": [
+      "Soldier76",
+      "Sojourn"
+    ],
+    "soldier_hero_count": 51,
+    "sojourn_detail_count": 51
+  },
+  "notes": [
+    "Source-level tag verification passed. Real-time hit reception must be checked after deployment from GA4 Realtime and Microsoft Clarity dashboard.",
+    "Canonical URL and sitemap use https://owcoach.jp/. Change them if deploying only to a github.io URL."
+  ]
+}
