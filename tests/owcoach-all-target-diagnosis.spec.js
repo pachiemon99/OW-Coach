@@ -129,7 +129,7 @@ test.describe('all target composition diagnosis regression', () => {
     for (const heroId of ids) {
       await selectTargetAndDiagnose(page, heroId);
       const resultText = await page.locator('#result').innerText();
-      expect(resultText).toContain(EXPECTED_TARGET_LABELS.en[heroId].replace(':', ''));
+      expect(resultText).toContain(EXPECTED_TARGET_LABELS.en[heroId]);
       expect(resultText).not.toBe(previousHeader);
       previousHeader = resultText;
     }

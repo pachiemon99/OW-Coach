@@ -76,9 +76,13 @@ async function expectPolicyLanguage(page, policy, lang) {
   const forbiddenBody = lang === 'en' ? policy.jaBody : policy.enBody;
 
   await expect(page.locator('header h1')).toContainText(expectedTitle);
-  await expect(page.locator('main')).toContainText(expectedBody);
   await expect(page.locator('header h1')).not.toContainText(forbiddenTitle);
-  if (expectedBody !== forbiddenBody) await expect(page.locator('main')).not.toContainText(forbiddenBody);
+  await expect(page.locator('.langBlock.active')).toHaveAttribute('data-lang', lang);
+  await expect(page.locator('.langBlock.active')).toContainText(expectedBody);
+  if (expectedBody !== forbiddenBody) {
+    const visibleBody = await page.locator('.langBlock.active').innerText();
+    expect(visibleBody).not.toContain(forbiddenBody);
+  }
 
   const state = await page.evaluate(() => ({
     dataset: document.documentElement.dataset.owLang,
@@ -94,11 +98,8 @@ async function expectPolicyLanguage(page, policy, lang) {
   expect(state.title).toContain(expectedTitle);
   expect(state.description.length).toBeGreaterThan(10);
   expect(state.activeLangs).toEqual([lang]);
-  if (lang === 'en') {
-    expect(state.hiddenJapaneseBlocks).toBeGreaterThanOrEqual(1);
-  } else {
-    expect(state.hiddenEnglishBlocks).toBeGreaterThanOrEqual(1);
-  }
+  if (lang === 'en') expect(state.hiddenJapaneseBlocks).toBeGreaterThanOrEqual(1);
+  else expect(state.hiddenEnglishBlocks).toBeGreaterThanOrEqual(1);
 }
 
 async function expectNoBrokenPolicyText(page) {

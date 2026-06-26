@@ -1,3 +1,26 @@
+# OW Coach v49.44 Browser QA Stabilize (public)
+
+This package is based on v49.43 and fixes the GitHub Actions browser QA failures found from the uploaded `playwright-report`, `test-results`, and `visual-snapshots` artifacts.
+
+## Main fixes
+
+- Removed `cache: npm` from `.github/workflows/playwright.yml`.
+- Added CI/split test scripts: `test:e2e:ci`, `test:e2e:smoke`, `test:e2e:regression`, `test:e2e:visual`.
+- Fixed disabled-option timeouts in affinity fixture setup.
+- Added stable language modal selectors: `data-lang-choice`.
+- Exposed shared hero metadata for all-51 detail diagnosis checks.
+- Fixed policy page language tests to inspect visible language blocks only.
+- Fixed SEO file tests to fetch `robots.txt` / `sitemap.xml` without browser download navigation.
+- Kept public SEO URL: `https://owcoach.jp/`.
+
+## Validation note
+
+Syntax and static checks pass locally. Full browser execution must be verified on GitHub Actions because this container could not download Playwright browsers due a DNS/network error.
+
+See `validation_report.json` and `GITHUB_ACTIONS_NEXT.md` for details.
+
+---
+
 # OW Coach v49.43 Public URL SEO QA (public)
 
 This package consolidates the v49.31-v49.40 Playwright browser QA additions into a ZIP-ready QA build.
@@ -132,3 +155,19 @@ npm run check:syntax
 - Added `tests/owcoach-seo-files.spec.js` to verify both files exist, are served by the static server, and include all public OW Coach pages.
 - Default URL placeholder is `https://owcoach.jp`. Before public release, replace it in both `robots.txt` and `sitemap.xml` with the real GitHub Pages or custom domain URL.
 - Public pages listed in the sitemap: `/`, `/notices.html`, `/terms.html`, `/privacy.html`, `/tokusho.html`.
+
+
+## v49.44 Run browser QA improvements
+- Removed npm cache from GitHub Actions to avoid package-lock dependency failure.
+- Run browser QA now uses `npm run test:e2e:ci` with two CI workers and no retries to avoid long failure storms.
+- Fixed tests that selected disabled duplicate enemy support slots.
+- Fixed policy-page language checks to validate visible active language blocks only.
+- Added stable `data-lang-choice` attributes to first-visit modal buttons and exposed shared hero metadata for QA.
+
+
+## v49.44 Run browser QA improvements
+- Removed npm cache from GitHub Actions to avoid package-lock dependency failure.
+- Run browser QA now uses `npm run test:e2e:ci` with two CI workers and no retries to avoid long failure storms.
+- Fixed tests that selected disabled duplicate enemy support slots.
+- Fixed policy-page language checks to validate visible active language blocks only.
+- Added stable `data-lang-choice` attributes to first-visit modal buttons and exposed shared hero metadata for QA.

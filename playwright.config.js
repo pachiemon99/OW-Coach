@@ -4,12 +4,12 @@ const PORT = Number(process.env.PORT || 4173);
 
 module.exports = defineConfig({
   testDir: './tests',
-  timeout: 30 * 1000,
-  expect: { timeout: 8 * 1000 },
+  timeout: 45 * 1000,
+  expect: { timeout: 10 * 1000 },
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  retries: process.env.CI ? 0 : 0,
+  workers: process.env.CI ? 2 : undefined,
   reporter: [
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }]

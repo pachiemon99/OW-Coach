@@ -40,13 +40,17 @@ test.describe('SEO support files', () => {
     expect(sitemap).not.toContain('your-domain' + '.example');
   });
 
-  test('robots.txt and sitemap.xml are served by the static server', async ({ page }) => {
-    await page.goto('/robots.txt');
-    await expect(page.locator('body')).toContainText('User-agent: *');
-    await expect(page.locator('body')).toContainText(`Sitemap: ${PUBLIC_BASE_URL}/sitemap.xml`);
+  test('robots.txt and sitemap.xml are served by the static server', async ({ request }) => {
+    const robotsResponse = await request.get('/robots.txt');
+    expect(robotsResponse.ok()).toBeTruthy();
+    const robots = await robotsResponse.text();
+    expect(robots).toContain('User-agent: *');
+    expect(robots).toContain(`Sitemap: ${PUBLIC_BASE_URL}/sitemap.xml`);
 
-    await page.goto('/sitemap.xml');
-    await expect(page.locator('body')).toContainText('<urlset');
-    await expect(page.locator('body')).toContainText(`${PUBLIC_BASE_URL}/privacy.html`);
+    const sitemapResponse = await request.get('/sitemap.xml');
+    expect(sitemapResponse.ok()).toBeTruthy();
+    const sitemap = await sitemapResponse.text();
+    expect(sitemap).toContain('<urlset');
+    expect(sitemap).toContain(`${PUBLIC_BASE_URL}/privacy.html`);
   });
 });

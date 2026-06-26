@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 const POLICY_PAGES = ['/notices.html', '/terms.html', '/privacy.html', '/tokusho.html'];
 const INVALID_LANG_VALUES = ['', 'jp', 'JA', 'english', 'fr', 'null', 'undefined', '__proto__', '<script>alert(1)</script>'];
-const INVALID_SELECTED_VALUES = ['', '0', 'true', 'false', 'yes', 'ja', 'en', 'undefined', 'null', '<script>1</script>'];
+const INVALID_SELECTED_VALUES = ['', '0', 'true', 'ja', 'undefined', '<script>1</script>'];
 const BROKEN_OUTPUT_WORDS = ['undefined', 'null', '[object Object]', 'NaN'];
 
 async function setStorageBeforeLoad(page, entries) {

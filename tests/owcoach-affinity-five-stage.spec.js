@@ -63,16 +63,21 @@ async function enemyFixtures(page) {
 }
 
 async function applyEnemyFixture(page, fixture) {
-  for (const [id, value] of Object.entries(fixture)) {
-    await page.locator(`#${id}`).selectOption(value);
-    await page.evaluate((selectId) => {
-      document.querySelector(`#${selectId}`).dispatchEvent(new Event('change', { bubbles: true }));
-    }, id);
-  }
+  await page.evaluate((nextFixture) => {
+    for (const [id, value] of Object.entries(nextFixture)) {
+      const select = document.querySelector(`#${id}`);
+      if (select) select.value = value;
+    }
+    for (const id of ['tank', 'dps1', 'dps2', 'sup1', 'sup2']) {
+      const select = document.querySelector(`#${id}`);
+      if (select) select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }, fixture);
   await expect.poll(async () => page.evaluate(() => ({
+    tank: Boolean(document.querySelector('#tank')?.value),
     dps: document.querySelector('#dps1').value !== document.querySelector('#dps2').value,
     sup: document.querySelector('#sup1').value !== document.querySelector('#sup2').value
-  }))).toEqual({ dps: true, sup: true });
+  }))).toEqual({ tank: true, dps: true, sup: true });
 }
 
 async function diagnose(page) {

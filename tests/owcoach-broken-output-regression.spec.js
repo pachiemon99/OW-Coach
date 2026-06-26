@@ -161,6 +161,7 @@ test.describe('broken output and legacy wording regression', () => {
       await page.locator('.tab').nth(0).click();
       await runCompositionDiagnosis(page, 'Soldier76', lang);
       await openDetailTab(page);
+      await openHeroDetail(page, 'Sombra');
       await expect(page.locator('#detailResult .card')).toBeVisible();
       await expectNoBadVisibleText(page, `roundtrip detail ${lang}`);
     }
