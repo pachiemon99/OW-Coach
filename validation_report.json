@@ -1,5 +1,5 @@
 {
-  "version": "49.44.0",
+  "version": "49.45.0",
   "name": "v49.44 Browser QA Stabilize",
   "kind": "public",
   "based_on": "v49.43 Public URL SEO QA",
@@ -40,5 +40,11 @@
       "test-results",
       "visual-snapshots"
     ]
-  }
+  },
+  "phase": "npm_registry_fix",
+  "package_lock_included": false,
+  "npmrc_public_registry": true,
+  "workflow_removes_lockfiles_before_install": true,
+  "workflow_install_command": "npm install --no-package-lock --registry=https://registry.npmjs.org/",
+  "internal_registry_residual": false
 }

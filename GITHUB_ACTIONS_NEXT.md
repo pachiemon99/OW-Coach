@@ -9,6 +9,11 @@
    - `npm run test:e2e:visual`
 5. Download artifacts: `playwright-report`, `test-results`, `visual-snapshots`.
 
-## v49.44 workflow fix
+## v49.45 workflow fix
 
 The workflow intentionally does not use `cache: npm`, because the previous run failed when no lock file was present. The package now also includes `package-lock.json` when available, but the workflow no longer depends on npm cache.
+
+
+## v49.45 npm registry fix
+
+GitHub Actions上でChatGPT実行環境由来の内部npmレジストリURLを参照しないよう、`package-lock.json` をZIPから除外し、`.npmrc` とworkflowで `https://registry.npmjs.org/` を明示しました。既存リポジトリに古い `package-lock.json` が残っていても、workflow実行時に削除してから `npm install --no-package-lock` を実行します。

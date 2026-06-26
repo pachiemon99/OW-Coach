@@ -1,8 +1,8 @@
 {
   "name": "owcoach-browser-qa",
-  "version": "49.44.0",
+  "version": "49.45.0",
   "private": true,
-  "description": "OW Coach static app with improved Playwright browser QA, SEO files, and v49.44 regression fixes.",
+  "description": "OW Coach static app with GitHub Actions npm registry fix, stable Playwright browser QA, and SEO files.",
   "scripts": {
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",

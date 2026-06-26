@@ -1,4 +1,4 @@
-# OW Coach v49.44 Browser QA Stabilize (public)
+# OW Coach v49.45 Browser QA Stabilize (public)
 
 This package is based on v49.43 and fixes the GitHub Actions browser QA failures found from the uploaded `playwright-report`, `test-results`, and `visual-snapshots` artifacts.
 
@@ -157,7 +157,7 @@ npm run check:syntax
 - Public pages listed in the sitemap: `/`, `/notices.html`, `/terms.html`, `/privacy.html`, `/tokusho.html`.
 
 
-## v49.44 Run browser QA improvements
+## v49.45 Run browser QA improvements
 - Removed npm cache from GitHub Actions to avoid package-lock dependency failure.
 - Run browser QA now uses `npm run test:e2e:ci` with two CI workers and no retries to avoid long failure storms.
 - Fixed tests that selected disabled duplicate enemy support slots.
@@ -165,9 +165,14 @@ npm run check:syntax
 - Added stable `data-lang-choice` attributes to first-visit modal buttons and exposed shared hero metadata for QA.
 
 
-## v49.44 Run browser QA improvements
+## v49.45 Run browser QA improvements
 - Removed npm cache from GitHub Actions to avoid package-lock dependency failure.
 - Run browser QA now uses `npm run test:e2e:ci` with two CI workers and no retries to avoid long failure storms.
 - Fixed tests that selected disabled duplicate enemy support slots.
 - Fixed policy-page language checks to validate visible active language blocks only.
 - Added stable `data-lang-choice` attributes to first-visit modal buttons and exposed shared hero metadata for QA.
+
+
+## v49.45 npm registry fix
+
+GitHub Actions上でChatGPT実行環境由来の内部npmレジストリURLを参照しないよう、`package-lock.json` をZIPから除外し、`.npmrc` とworkflowで `https://registry.npmjs.org/` を明示しました。既存リポジトリに古い `package-lock.json` が残っていても、workflow実行時に削除してから `npm install --no-package-lock` を実行します。
