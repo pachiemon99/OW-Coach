@@ -1,8 +1,8 @@
 {
   "name": "owcoach-browser-qa",
-  "version": "49.45.0",
+  "version": "49.46.0",
   "private": true,
-  "description": "OW Coach static app with GitHub Actions npm registry fix, stable Playwright browser QA, and SEO files.",
+  "description": "OW Coach static app with stable Playwright browser QA, privacy policy language fixture fix, localStorage reload repair, and public SEO files.",
   "scripts": {
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
@@ -12,7 +12,8 @@
     "test:e2e:ci": "playwright test --workers=2 --retries=0",
     "test:e2e:smoke": "playwright test tests/owcoach-language.spec.js tests/owcoach-diagnosis.spec.js tests/owcoach-seo-files.spec.js",
     "test:e2e:regression": "playwright test tests/owcoach-language-endurance.spec.js tests/owcoach-all-target-diagnosis.spec.js tests/owcoach-affinity-five-stage.spec.js tests/owcoach-enemy-unique.spec.js tests/owcoach-all-hero-detail.spec.js tests/owcoach-policy-language-ui.spec.js tests/owcoach-broken-output-regression.spec.js tests/owcoach-localstorage-fallback.spec.js",
-    "test:e2e:visual": "playwright test tests/owcoach-english-mobile-ui.spec.js tests/owcoach-visual-snapshots.spec.js"
+    "test:e2e:visual": "playwright test tests/owcoach-english-mobile-ui.spec.js tests/owcoach-visual-snapshots.spec.js",
+    "test:e2e:policy-storage": "playwright test tests/owcoach-policy-language-ui.spec.js tests/owcoach-localstorage-fallback.spec.js --workers=2 --retries=0"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.0"

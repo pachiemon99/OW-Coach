@@ -11,7 +11,7 @@
 
 ## v49.45 workflow fix
 
-The workflow intentionally does not use `cache: npm`, because the previous run failed when no lock file was present. The package now also includes `package-lock.json` when available, but the workflow no longer depends on npm cache.
+The workflow intentionally does not use the npm cache option, because the previous run failed when no lock file was present. The workflow does not depend on a lock file or npm cache.
 
 
 ## v49.45 npm registry fix

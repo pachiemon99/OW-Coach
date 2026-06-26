@@ -5,23 +5,25 @@ const INVALID_LANG_VALUES = ['', 'jp', 'JA', 'english', 'fr', 'null', 'undefined
 const INVALID_SELECTED_VALUES = ['', '0', 'true', 'ja', 'undefined', '<script>1</script>'];
 const BROKEN_OUTPUT_WORDS = ['undefined', 'null', '[object Object]', 'NaN'];
 
-async function setStorageBeforeLoad(page, entries) {
-  await page.addInitScript((items) => {
+async function openWithStorage(page, path, entries) {
+  // Do not use addInitScript here. addInitScript runs again on reload and would
+  // re-corrupt localStorage after the flag menu repairs it.
+  await page.goto(path);
+  await page.waitForLoadState('domcontentloaded');
+  await page.evaluate((items) => {
     localStorage.clear();
-    for (const [key, value] of Object.entries(items)) localStorage.setItem(key, value);
+    for (const [key, value] of Object.entries(items)) localStorage.setItem(key, String(value));
   }, entries);
+  await page.reload();
+  await page.waitForLoadState('domcontentloaded');
 }
 
 async function openMainWithStorage(page, entries) {
-  await setStorageBeforeLoad(page, entries);
-  await page.goto('/');
-  await page.waitForLoadState('domcontentloaded');
+  await openWithStorage(page, '/', entries);
 }
 
 async function openPolicyWithStorage(page, path, entries) {
-  await setStorageBeforeLoad(page, entries);
-  await page.goto(path);
-  await page.waitForLoadState('domcontentloaded');
+  await openWithStorage(page, path, entries);
 }
 
 async function expectSelfNamedLanguageOptions(page) {
@@ -116,7 +118,7 @@ test.describe('localStorage fallback regression', () => {
 
     await page.locator('#flagLangBtn').click();
     await expect(page.locator('#flagLangMenu')).toBeVisible();
-    await page.locator('#flagLangMenu [data-lang-choice="en"]').click();
+    await page.locator('#flagLangMenu.open [data-lang-choice="en"]').click();
     await expectLanguageState(page, 'en');
     await expect(page.locator('#flagLangBtn')).toHaveText('🇺🇸');
     await page.reload();

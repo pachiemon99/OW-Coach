@@ -1,10 +1,23 @@
+# OW Coach v49.46 Policy Storage QA (public)
+
+This package fixes the remaining 8 GitHub Actions failures from v49.45. The prior run reached 178 passed / 8 failed; all failures were isolated to privacy policy language assertions and the localStorage repair test.
+
+## v49.46 fixes
+
+- Added visible Privacy Policy intro text to `privacy.html` Japanese and English content blocks.
+- Updated policy E2E expectations to use body text that actually belongs to the active content block.
+- Reworked `owcoach-localstorage-fallback.spec.js` storage setup so corrupted storage is not re-applied on reload.
+- Added `test:e2e:policy-storage` for quick focused reruns of the two files that previously failed.
+- Kept the public npm registry workflow fix from v49.45.
+- Kept `https://owcoach.jp/`, `robots.txt`, `sitemap.xml`, Google Analytics, and Microsoft Clarity.
+
 # OW Coach v49.45 Browser QA Stabilize (public)
 
 This package is based on v49.43 and fixes the GitHub Actions browser QA failures found from the uploaded `playwright-report`, `test-results`, and `visual-snapshots` artifacts.
 
 ## Main fixes
 
-- Removed `cache: npm` from `.github/workflows/playwright.yml`.
+- Removed the npm cache option from `.github/workflows/playwright.yml`.
 - Added CI/split test scripts: `test:e2e:ci`, `test:e2e:smoke`, `test:e2e:regression`, `test:e2e:visual`.
 - Fixed disabled-option timeouts in affinity fixture setup.
 - Added stable language modal selectors: `data-lang-choice`.

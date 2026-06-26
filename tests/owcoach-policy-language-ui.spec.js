@@ -19,8 +19,8 @@ const POLICY_PAGES = [
     path: '/privacy.html',
     jaTitle: 'プライバシーポリシー',
     enTitle: 'Privacy Policy',
-    jaBody: 'プライバシーポリシー',
-    enBody: 'Privacy Policy'
+    jaBody: '利用者のプライバシー',
+    enBody: 'OW Coach respects user privacy'
   },
   {
     path: '/tokusho.html',
@@ -56,7 +56,7 @@ async function chooseFromFlagMenu(page, lang) {
   await expect(page.locator('#flagLangMenu')).toBeVisible();
   await expect(page.locator('#flagLangMenu [data-lang-choice="ja"]')).toContainText('日本語');
   await expect(page.locator('#flagLangMenu [data-lang-choice="en"]')).toContainText('English');
-  await page.locator(`#flagLangMenu [data-lang-choice="${lang}"]`).click();
+  await page.locator(`#flagLangMenu.open [data-lang-choice="${lang}"]`).click();
   await expect.poll(async () => page.evaluate(() => document.documentElement.dataset.owLang)).toBe(lang);
 }
 

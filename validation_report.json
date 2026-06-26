@@ -1,8 +1,8 @@
 {
-  "version": "49.45.0",
-  "name": "v49.44 Browser QA Stabilize",
+  "version": "49.46.0",
+  "name": "v49.46 Policy Storage QA",
   "kind": "public",
-  "based_on": "v49.43 Public URL SEO QA",
+  "based_on": "v49.45 npm registry fix",
   "public_url": "https://owcoach.jp/",
   "uploaded_github_actions_report_stats_before_fix": {
     "total": 194,
@@ -46,5 +46,10 @@
   "npmrc_public_registry": true,
   "workflow_removes_lockfiles_before_install": true,
   "workflow_install_command": "npm install --no-package-lock --registry=https://registry.npmjs.org/",
-  "internal_registry_residual": false
+  "internal_registry_residual": false,
+  "fixes": [
+    "privacy policy active block assertion",
+    "localStorage repair test persistent addInitScript reload issue"
+  ],
+  "expected_previous_failures_fixed": 8
 }
