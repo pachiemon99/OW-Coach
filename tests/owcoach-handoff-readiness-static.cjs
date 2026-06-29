@@ -7,9 +7,9 @@ const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 const exists = (p) => fs.existsSync(path.join(root, p));
 
 const required = [
-  'README_PACK_T_HANDOFF_READINESS.md',
-  'HANDOFF_READINESS_CONTRACT_v50_20.md',
-  'owcoach_handoff_readiness_contract_v50_20.json',
+  'docs/packs/README_PACK_T_HANDOFF_READINESS.md',
+  'docs/contracts/HANDOFF_READINESS_CONTRACT_v50_20.md',
+  'data/contracts/owcoach_handoff_readiness_contract_v50_20.json',
   'handoff_bundle/00_READ_ME_FIRST.md',
   'handoff_bundle/NEXT_CHAT_PROMPT.md',
   'handoff_bundle/CURRENT_STATE_v50_20.md',
@@ -26,11 +26,11 @@ for (const file of required) {
 }
 
 const pkg = JSON.parse(read('package.json'));
-if (!['50.20.0','50.21.0','50.22.0'].includes(pkg.version)) fail(`package version mismatch: ${pkg.version}`);
+if (!['50.20.0','50.21.0','50.22.0','50.23.0'].includes(pkg.version)) fail(`package version mismatch: ${pkg.version}`);
 if (!pkg.scripts['check:handoff-readiness']) fail('missing check:handoff-readiness script');
 if (!pkg.scripts['check:syntax'].includes('check:handoff-readiness')) fail('check:syntax does not include handoff readiness');
 
-const contract = JSON.parse(read('owcoach_handoff_readiness_contract_v50_20.json'));
+const contract = JSON.parse(read('data/contracts/owcoach_handoff_readiness_contract_v50_20.json'));
 if (contract.github_reflection !== 'on_hold') fail('handoff contract must keep GitHub reflection on hold');
 if (contract.required_handoff_files.length < 10) fail('handoff contract required files too small');
 
@@ -44,13 +44,13 @@ for (const needle of ['Pack A', 'Pack S', 'Pack T']) {
   if (!history.includes(needle)) fail(`pack history missing: ${needle}`);
 }
 
-const validation = JSON.parse(read('validation_report.json'));
+const validation = JSON.parse(read('data/reports/validation_report.json'));
 if (validation.version !== 'v50.20 Pack T') fail(`validation version mismatch: ${validation.version}`);
 if (validation.github_reflection !== 'on_hold') fail('validation must record GitHub reflection hold');
 if (validation.browser_playwright !== 'pending_github_actions') fail('validation must keep browser QA pending');
 
 const index = read('index.html');
-if (!index.includes('owcoach_handoff_readiness_contract_v50_20.json')) fail('index metadata missing handoff contract reference');
+if (!index.includes('data/contracts/owcoach_handoff_readiness_contract_v50_20.json')) fail('index metadata missing handoff contract reference');
 if (!index.includes('v50.20 Pack T')) fail('index missing Pack T marker');
 
 const manifest = JSON.parse(read('handoff_bundle/file_manifest_v50_20.json'));

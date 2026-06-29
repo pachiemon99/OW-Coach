@@ -4,7 +4,7 @@ const path = require('path');
 const root = path.resolve(__dirname, '..');
 const index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-const csvPath = path.join(root, 'owcoach_matchup_reason_db_v50_10.csv');
+const csvPath = path.join(root, 'data/shared/owcoach_matchup_reason_db_v50_10.csv');
 if (!fs.existsSync(csvPath)) throw new Error('missing owcoach_matchup_reason_db_v50_10.csv');
 const csv = fs.readFileSync(csvPath, 'utf8').trim();
 const lines = csv.split(/\r?\n/);

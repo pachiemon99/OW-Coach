@@ -4,8 +4,8 @@ const path = require('path');
 const root = path.resolve(__dirname, '..');
 const index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-const csvPath = path.join(root, 'owcoach_matchup_category_taxonomy_db_v50_12.csv');
-const contractPath = path.join(root, 'owcoach_matchup_category_taxonomy_contract_v50_12.json');
+const csvPath = path.join(root, 'data/shared/owcoach_matchup_category_taxonomy_db_v50_12.csv');
+const contractPath = path.join(root, 'data/contracts/owcoach_matchup_category_taxonomy_contract_v50_12.json');
 if (!fs.existsSync(csvPath)) throw new Error('missing matchup category taxonomy CSV');
 if (!fs.existsSync(contractPath)) throw new Error('missing matchup category contract JSON');
 const contract = JSON.parse(fs.readFileSync(contractPath, 'utf8'));
@@ -61,6 +61,9 @@ const mustContain = [
   'owcMatchupCategory',
   'owcDetailMatchupCategoryHtml',
   'owcCompositionCategorySummaryLines',
+  'owcCategorySpecificSummary',
+  'owcCategorySkillText',
+  'owcCategorySkillNames',
   '対面カテゴリ',
   '対面カテゴリ要約',
   'd.categorySummary=typeof owcCompositionCategorySummaryLines',
@@ -69,6 +72,12 @@ const mustContain = [
 for (const needle of mustContain) {
   if (!index.includes(needle)) throw new Error(`missing runtime marker: ${needle}`);
 }
+
+if (index.includes("map(x=>`${x.label}：${x.heroes.join('、')}。${x.responses[0]}`)")) {
+  throw new Error('composition category summary must not reuse the first generic recommended_response');
+}
+if (!index.includes('heroRefs.push(h)')) throw new Error('composition category summary must keep hero refs for skill-specific advice');
+if (!index.includes('owcCategorySkillNames(hero')) throw new Error('missing skill-name resolver for category summary');
 if (!pkg.scripts['check:matchup-categories']) throw new Error('missing check:matchup-categories script');
 if (!pkg.scripts['check:syntax'].includes('check:matchup-categories')) throw new Error('check:syntax does not run Pack L check');
 console.log('Matchup category taxonomy static checks passed');

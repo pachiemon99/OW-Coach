@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-const contractPath = path.join(root, 'owcoach_priority_target_contract_v50_8.json');
-const csvPath = path.join(root, 'owcoach_priority_target_decision_db_v50_8.csv');
+const contractPath = path.join(root, 'data/contracts/owcoach_priority_target_contract_v50_8.json');
+const csvPath = path.join(root, 'data/shared/owcoach_priority_target_decision_db_v50_8.csv');
 if (!fs.existsSync(contractPath)) throw new Error('Missing priority target contract JSON.');
 if (!fs.existsSync(csvPath)) throw new Error('Missing priority target CSV mirror.');
 const contract = JSON.parse(fs.readFileSync(contractPath, 'utf8'));
@@ -16,7 +16,9 @@ for (const token of [
   'owcPriorityClass',
   'owcPriorityTargetOrderLines',
   'owcPriorityTargetPillTargets',
-  'owcDetailPriorityTargets'
+  'owcDetailPriorityTargets',
+  'owcPrioritySkillPlan',
+  'owcPriorityGroupSkillPlan'
 ]) {
   if (!html.includes(token)) throw new Error(`Missing ${token} in index.html.`);
 }
@@ -29,6 +31,11 @@ if (!html.includes('d.order=owcPriorityTargetOrderLines(selectedEnemy(),commonCo
 }
 if (!html.includes('d.targets=owcPriorityTargetPillTargets(selectedEnemy(),target());')) {
   throw new Error('Composition target pills do not use owcPriorityTargetPillTargets.');
+}
+
+const prioritySource = html.slice(html.indexOf('function owcPrioritySkillPlan'), html.indexOf('function owcPriorityTargetPillTargets'));
+for (const phrase of ['回復・防御・位置移動を使わせる', '深追いせず回復・防御を使わせる', '移動・防御・救助を使った後']) {
+  if (prioritySource.includes(phrase)) throw new Error(`Generic priority phrase remains in visible priority renderer: ${phrase}`);
 }
 if (!html.includes("if(typeof owcDetailPriorityTargets==='function')d.targets=owcDetailPriorityTargets(h,d,target());")) {
   throw new Error('Detail view does not use owcDetailPriorityTargets.');
