@@ -18,6 +18,7 @@ for(const label of labels){
     }
   }
 }
+if(!String(bundle.composition_win_conditions?.['ダイブ救助構成']||'').includes('敵5人を1人ずつの対面として読まない')) fail('visible dive-save win condition compatibility text is missing');
 if(!bundle.target_role_templates?.default) fail('missing default target role template');
 if(!Array.isArray(bundle.target_role_templates?.groups) || bundle.target_role_templates.groups.length < 4) fail('target role template groups are incomplete');
 const sourceFiles = [

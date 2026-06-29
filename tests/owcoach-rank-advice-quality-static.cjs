@@ -3,8 +3,8 @@ const path = require('path');
 
 const root = process.cwd();
 const indexPath = path.join(root, 'index.html');
-const csvPath = path.join(root, 'owcoach_rank_advice_quality_db_v50_9.csv');
-const contractPath = path.join(root, 'owcoach_rank_advice_quality_contract_v50_9.json');
+const csvPath = path.join(root, 'data/shared/owcoach_rank_advice_quality_db_v50_9.csv');
+const contractPath = path.join(root, 'data/contracts/owcoach_rank_advice_quality_contract_v50_9.json');
 
 function fail(msg){ console.error(msg); process.exit(1); }
 function parseCsv(text){

@@ -30,8 +30,8 @@ for (const targetId of requiredTargets) {
   if (detailCount !== 51) throw new Error(`${targetId} detail_db count ${detailCount}, expected 51`);
   if (t.meta.comp_db_count !== compCount) throw new Error(`${targetId} comp_db_count metadata mismatch`);
   if (t.meta.detail_db_count !== detailCount) throw new Error(`${targetId} detail_db_count metadata mismatch`);
-  const compCsv = path.join(ROOT, `${slugs[targetId]}_comp_diagnosis_db_v1.csv`);
-  const detailCsv = path.join(ROOT, `${slugs[targetId]}_hero_db_v1_full_all_roles.csv`);
+  const compCsv = path.join(ROOT, 'data', 'targets', slugs[targetId], `${slugs[targetId]}_comp_diagnosis_db_v1.csv`);
+  const detailCsv = path.join(ROOT, 'data', 'targets', slugs[targetId], `${slugs[targetId]}_hero_db_v1_full_all_roles.csv`);
   if (!fs.existsSync(compCsv)) throw new Error(`${targetId} comp CSV missing: ${compCsv}`);
   if (!fs.existsSync(detailCsv)) throw new Error(`${targetId} detail CSV missing: ${detailCsv}`);
   const registryRow = manifest.targets.find(x => x.target_id === targetId);
