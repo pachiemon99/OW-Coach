@@ -1,12 +1,17 @@
 # QA and GitHub Reflection Runbook
 
-## Current rule
+## Current state
 
-GitHub reflection is on hold until the user explicitly resumes it.
+Pack A-T GitHub reflection has been completed via PR #3.
+
+- Reflection branch: `pack-t-public-header-v50`
+- Merged into: `main`
+- Merge commit: `439d13b22e3b45bf6193e3de6671bd238b4c16e1`
+- Browser QA after hotfix: passed (`12 passed`)
 
 ## Local static checks
 
-Run from `repo_files/` first:
+Before future GitHub reflection work, run from the repository root:
 
 ```bash
 npm run check:syntax
@@ -14,14 +19,14 @@ node --check _combined.js
 npm run check:handoff-readiness
 ```
 
-Then repeat the same important checks in `dev_app/` and `public_release/` if needed.
+When working from a packaged ZIP, repeat the same important checks in `dev_app/` and `public_release/` if needed.
 
-## Browser QA when GitHub reflection resumes
+## Browser QA for future branches
 
 1. Create a new branch from current `main`.
-2. Copy the contents of `repo_files/` into the repository.
-3. Commit as a single Pack T reflection commit.
-4. Push branch.
+2. Apply the intended change.
+3. Run local static checks.
+4. Commit and push the branch.
 5. Confirm GitHub Actions `browser-qa`.
 6. If Actions pass, merge or create a release candidate tag.
 
