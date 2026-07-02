@@ -1,0 +1,25 @@
+{
+  "version": "v50.42.0",
+  "phase": "text_quality_phase8_browser_qa_polish",
+  "purpose": "Rendered-output wording stabilization before Browser QA rerun.",
+  "runtime_feature_change": false,
+  "public_wording_replacements": {
+    "完成コア検出 / 5人構成合成": "シナジー",
+    "敵5人の完成形": "敵構成の勝ち方",
+    "切るべき配線": "先に止める連携",
+    "席": "立ち位置",
+    "絶対NG": "避ける行動",
+    "優先対象": "先に見る相手"
+  },
+  "representative_cases": [
+    "Soldier76 vs Reinhardt/Mei/Reaper/Lucio/Kiriko",
+    "Soldier76 vs Sigma/Bastion/Ashe/Baptiste/Zenyatta",
+    "Soldier76 vs D.Va/Pharah/Echo/Mercy/Ana",
+    "Soldier76 detail vs Winston"
+  ],
+  "qa_added": [
+    "tests/owcoach-text-quality-phase8-static.cjs"
+  ],
+  "browser_qa_local_status": "not_run_playwright_not_installed",
+  "github_actions_expected_check": "browser-qa"
+}

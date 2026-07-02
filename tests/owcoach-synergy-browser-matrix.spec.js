@@ -33,7 +33,7 @@ async function runDiagnosis(page){
     if (!button) throw new Error('Diagnosis button not found');
     button.click();
   });
-  await expect(page.locator('#result')).toContainText('構成の勝ち筋');
+  await expect(page.locator('#result')).toContainText('敵の勝ち筋');
 }
 
 const comps=[['Winston','Tracer','Genji','Kiriko','Lifeweaver'],['Sigma','Ashe','Pharah','Mercy','Zenyatta'],['Sigma','Tracer','Sombra','Ana','Zenyatta'],['Reinhardt','Reaper','Mei','Lúcio','Kiriko'],['Orisa','Sojourn','Hanzo','Ana','Lifeweaver'],['Zarya','Cassidy','Hanzo','Kiriko','Lifeweaver'],['Zarya','Soldier: 76','Hanzo','Ana','Lúcio']];
@@ -47,7 +47,7 @@ test('17 targets by 7 compositions render without broken output', async({page})=
       await setComp(page,comp);
       await runDiagnosis(page);
       const txt=await page.locator('#result').innerText();
-      expect(txt).toContain('構成の勝ち筋');
+      expect(txt).toContain('敵の勝ち筋');
       expect(txt).not.toMatch(/undefined|null|\[object Object\]|NaN|該当なし/);
     }
   }

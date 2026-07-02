@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, '..');
 const fail = (msg) => { console.error(msg); process.exit(1); };
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 const exists = (p) => fs.existsSync(path.join(root, p));
+const isV50Package=(v)=>{const p=String(v||'').split('.').map(Number);return p.length===3&&p.every(Number.isInteger)&&p[0]===50&&p[1]>=0&&p[1]<=99&&p[2]>=0;};
 
 const required = [
   'docs/packs/README_PACK_T_HANDOFF_READINESS.md',
@@ -26,7 +27,7 @@ for (const file of required) {
 }
 
 const pkg = JSON.parse(read('package.json'));
-if (!['50.20.0','50.21.0','50.22.0','50.23.0','50.24.0','50.26.0','50.27.0','50.28.0'].includes(pkg.version)) fail(`package version mismatch: ${pkg.version}`);
+if (!isV50Package(pkg.version)) fail(`package version mismatch: ${pkg.version}`);
 if (!pkg.scripts['check:handoff-readiness']) fail('missing check:handoff-readiness script');
 if (!pkg.scripts['check:syntax'].includes('check:handoff-readiness')) fail('check:syntax does not include handoff readiness');
 
@@ -35,8 +36,18 @@ if (contract.github_reflection !== 'on_hold') fail('handoff contract must keep G
 if (contract.required_handoff_files.length < 10) fail('handoff contract required files too small');
 
 const prompt = read('handoff_bundle/NEXT_CHAT_PROMPT.md');
-for (const needle of ['GitHubへの反映は v50.0.0 以降しばらく保留', 'PlaywrightブラウザQAはPack A〜Tでは未実施', 'owcoach_v50_20_handoff_readiness_pack_t.zip']) {
-  if (!prompt.includes(needle)) fail(`next chat prompt missing: ${needle}`);
+const isReleaseStabilized = Number(String(pkg.version).split('.')[1]) >= 34;
+if (isReleaseStabilized) {
+  for (const needle of ['v50.34 release stabilization', 'browser-qa', 'Phase 8 map-aware diagnosis']) {
+    if (!prompt.includes(needle)) fail(`next chat prompt missing release-stabilized note: ${needle}`);
+  }
+  for (const rel of ['handoff_bundle/CHAT_HANDOFF_v50_34.md', 'docs/packs/README_PACK_AD_RELEASE_STABILIZATION.md', 'docs/status/GITHUB_ACTIONS_PHASE6_BROWSER_QA_PASS_v50_33.md']) {
+    if (!exists(rel)) fail(`missing release-stabilized handoff file: ${rel}`);
+  }
+} else {
+  for (const needle of ['GitHubへの反映は v50.0.0 以降しばらく保留', 'PlaywrightブラウザQAはPack A〜Tでは未実施', 'owcoach_v50_20_handoff_readiness_pack_t.zip']) {
+    if (!prompt.includes(needle)) fail(`next chat prompt missing: ${needle}`);
+  }
 }
 
 const history = read('handoff_bundle/PACK_HISTORY_A_TO_T.md');
@@ -45,9 +56,11 @@ for (const needle of ['Pack A', 'Pack S', 'Pack T']) {
 }
 
 const validation = JSON.parse(read('data/reports/validation_report.json'));
-if (validation.version !== 'v50.20 Pack T') fail(`validation version mismatch: ${validation.version}`);
-if (validation.github_reflection !== 'on_hold') fail('validation must record GitHub reflection hold');
-if (validation.browser_playwright !== 'pending_github_actions') fail('validation must keep browser QA pending');
+if (!isReleaseStabilized) {
+  if (validation.version !== 'v50.20 Pack T') fail(`validation version mismatch: ${validation.version}`);
+  if (validation.github_reflection !== 'on_hold') fail('validation must record GitHub reflection hold');
+  if (validation.browser_playwright !== 'pending_github_actions') fail('validation must keep browser QA pending');
+}
 
 const index = read('index.html');
 if (!index.includes('data/contracts/owcoach_handoff_readiness_contract_v50_20.json')) fail('index metadata missing handoff contract reference');

@@ -100,3 +100,20 @@ Adds one-wave review loops for all 17 target heroes and all 51 enemy heroes. Det
 - Adds `tests/owcoach-handoff-readiness-static.cjs` and `npm run check:handoff-readiness`.
 - Does not change matchup strategy data.
 - GitHub reflection remains on hold and Playwright browser QA remains pending for Pack A-T.
+
+
+## v50.34 Phase 7 - Release Stabilization
+
+- Freezes the v50.33 macro rebuild after GitHub Actions `OW Coach Browser QA #44` passed.
+- Keeps the Phase 1-6 macro composition, synergy, trio-core, detail-role, and browser QA layers intact.
+- Adds release handoff notes, final reflection instructions, and a Phase 7 static guard.
+- Does not add new runtime diagnosis features. This pack is a release-stabilization checkpoint before the next feature branch.
+- Recommended GitHub flow: merge the passing Phase 6 branch to `main`, run `browser-qa` once on `main`, then treat `v50.34.0` as the stable baseline.
+
+
+## v50.42 Text Quality Phase 8 - Browser QA Polish
+
+- Public UI wording is normalized after render for composition diagnosis and detail diagnosis.
+- Internal labels such as `完成コア`, `5人構成合成`, `配線`, and `席` are not shown in rendered Japanese output.
+- Browser QA expectations were updated to the public wording: `シナジー`, `敵構成の勝ち方`, and `先に止める連携`.
+- Added `npm run check:text-quality-phase8` for rendered-output quality checks.

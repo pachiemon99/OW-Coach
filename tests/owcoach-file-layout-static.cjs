@@ -1,3 +1,4 @@
+const isV50Package=(v)=>{const p=String(v||'').split('.').map(Number);return p.length===3&&p.every(Number.isInteger)&&p[0]===50&&p[1]>=0&&p[1]<=99&&p[2]>=0;};
 const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname, '..');
@@ -48,5 +49,5 @@ const contractRequired = [
 ];
 for (const rel of contractRequired) if (!exists(rel)) fail(`missing moved contract/doc: ${rel}`);
 const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-if (!['50.23.0','50.24.0','50.26.0','50.27.0','50.28.0'].includes(pkg.version)) fail(`package version mismatch: ${pkg.version}`);
+if (!isV50Package(pkg.version)) fail(`package version mismatch: ${pkg.version}`);
 console.log('File layout optimization static checks passed');

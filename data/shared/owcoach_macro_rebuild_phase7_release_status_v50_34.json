@@ -1,0 +1,19 @@
+{
+  "package_version": "50.34.0",
+  "pack": "AD",
+  "phase": "macro_rebuild_phase7_release_stabilization",
+  "scope": "release stabilization and handoff after phase6 browser QA pass",
+  "runtime_feature_change": false,
+  "browser_qa_evidence": "User-supplied screenshot of OW Coach Browser QA #44 succeeded",
+  "stabilized_phases": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "recommended_branch": "pack-ad-v50-34-release-stabilization",
+  "recommended_commit": "Stabilize v50.34 after phase6 browser QA pass",
+  "next_feature_recommendation": "Phase 8 map-aware diagnosis"
+}

@@ -1,0 +1,1161 @@
+{
+  "version": "50.34.0",
+  "file_count": 231,
+  "files": [
+    {
+      "path": ".github/workflows/playwright.yml",
+      "size": 1627,
+      "sha256": "b8e28915d599e5f684338aa9ff84e966c9604c42720fd5c4cedae8ffaafe31d1"
+    },
+    {
+      "path": ".npmrc",
+      "size": 56,
+      "sha256": "f42d16937f6eb917980e2a70a32397242da9192fc6a4dd3f115dc717d2673a21"
+    },
+    {
+      "path": "README.md",
+      "size": 5595,
+      "sha256": "b3568400af2e93cd3cfe3beb13550a0698ca3432b016956200e1c0ab9f0f0ac1"
+    },
+    {
+      "path": "README_PACK_V_HOTFIX_SYNERGY_REVIEW.md",
+      "size": 1097,
+      "sha256": "9dcd446abf7298f2f9a38749891734d16746434cb244708598ef4eca0cdd0ae6"
+    },
+    {
+      "path": "data/audits/owcoach_db_quality_score_audit_v50_15.csv",
+      "size": 305733,
+      "sha256": "f189236cfa3168eb295b25815272e6b22b4a3355befd290c88e3d40aee5c8ce5"
+    },
+    {
+      "path": "data/audits/owcoach_db_quality_score_audit_v50_16.csv",
+      "size": 249412,
+      "sha256": "1c8c0a5a12bfb5ce4a5e7268afa64cfd27768e0db3b021a0cd84fd116f82ef7d"
+    },
+    {
+      "path": "data/audits/owcoach_db_quality_score_audit_v50_17.csv",
+      "size": 124585,
+      "sha256": "7168adf7484297739116be7b2ed348720c8c8db2ce0e3e51d7a6373be57bba70"
+    },
+    {
+      "path": "data/audits/owcoach_db_quality_target_summary_v50_15.csv",
+      "size": 629,
+      "sha256": "b3e75168f1002d0029eeb24d9922dd113cc9625a66edfe31af152cc284253260"
+    },
+    {
+      "path": "data/audits/owcoach_db_quality_target_summary_v50_16.csv",
+      "size": 475,
+      "sha256": "b644e52f3f67c3f2dce9721d27b4824922dcc82cad5626a7b5e8d003ca207dbb"
+    },
+    {
+      "path": "data/audits/owcoach_db_quality_target_summary_v50_17.csv",
+      "size": 129,
+      "sha256": "2f14047e32245513eebab6429c75bf087020da4066c1ce610bc0b34fed28a33f"
+    },
+    {
+      "path": "data/audits/owcoach_english_parity_audit_v50_14.csv",
+      "size": 878,
+      "sha256": "f1c0c87d255bf1a58318c0514921af3c81b86ac938d073cfb4a4b3ddaf30e537"
+    },
+    {
+      "path": "data/audits/owcoach_wave_review_loop_audit_v50_18.csv",
+      "size": 32853,
+      "sha256": "a96fa1da930c4c862ea4d700cb299c8a56af5d6a0d394a95eb5e1ed6508f60e1"
+    },
+    {
+      "path": "data/audits/owcoach_wave_review_loop_target_summary_v50_18.csv",
+      "size": 129,
+      "sha256": "2f14047e32245513eebab6429c75bf087020da4066c1ce610bc0b34fed28a33f"
+    },
+    {
+      "path": "data/contracts/owcoach_composition_synthesis_contract_v50_4.json",
+      "size": 675,
+      "sha256": "22049660577dd173f6058d2d1ef051c1ec8acf415b55f244e681e3615814efcd"
+    },
+    {
+      "path": "data/contracts/owcoach_composition_text_quality_contract_v50_5.json",
+      "size": 768,
+      "sha256": "3c385bb0ced8cdf55e19920c8e3ef7538a166586f1b5166ec7b4703505ffb435"
+    },
+    {
+      "path": "data/contracts/owcoach_db_contract_v50_2.json",
+      "size": 4876,
+      "sha256": "216e9951fe3ec284980892dc41c9fe42de8bde52be5065c2554e716eca1b1313"
+    },
+    {
+      "path": "data/contracts/owcoach_db_quality_score_contract_v50_15.json",
+      "size": 2871,
+      "sha256": "13f5441b5af56099953ced0018a30b9c40ed9a16b907d87e692d4911de270389"
+    },
+    {
+      "path": "data/contracts/owcoach_depth_enhancement_contract_v50_17.json",
+      "size": 868,
+      "sha256": "b3890073d9d929c395f5125ae0172ee4925c2600f649fcc584189dacc25f197d"
+    },
+    {
+      "path": "data/contracts/owcoach_diagnosis_result_ux_contract_v50_19.json",
+      "size": 624,
+      "sha256": "27be3ea6eb32c82f13327dc4e90b692df935e86dcd1ce0c09bf45514c6674d82"
+    },
+    {
+      "path": "data/contracts/owcoach_enemy_skill_wait_contract_v50_7.json",
+      "size": 943,
+      "sha256": "36aa180954e60754b69a1a351acbc74bfd0ecbd88da7e8967dbd1bf90bcd6ecf"
+    },
+    {
+      "path": "data/contracts/owcoach_english_parity_contract_v50_14.json",
+      "size": 881,
+      "sha256": "ace7d69da948417205681945cebab0b56c7d3a4aeee961637624923121bbf29a"
+    },
+    {
+      "path": "data/contracts/owcoach_feature_entitlement_contract_v50_13.json",
+      "size": 3061,
+      "sha256": "9051be4c5a4113aeada50ae5c4cb314b45fe2defb2d916a03ae32420d476e6e8"
+    },
+    {
+      "path": "data/contracts/owcoach_handoff_readiness_contract_v50_20.json",
+      "size": 896,
+      "sha256": "00642d37e6202857b93d6d7c0d155f257b535962a7f17678de589bc6d36311c1"
+    },
+    {
+      "path": "data/contracts/owcoach_matchup_category_taxonomy_contract_v50_12.json",
+      "size": 1420,
+      "sha256": "6343a8cea56d51f0f837cd09f8f59cd2d2b10d8aeb3c7b36311b78e416f18f5d"
+    },
+    {
+      "path": "data/contracts/owcoach_matchup_reason_contract_v50_10.json",
+      "size": 1162,
+      "sha256": "06821fd53d63981f38a504ef3b5acac9081da7311db1777b4415a729f839e9a3"
+    },
+    {
+      "path": "data/contracts/owcoach_priority_target_contract_v50_8.json",
+      "size": 1034,
+      "sha256": "cb543de5ec8b6ac0821eea5be97f9e44005ec655a1ac06b6feca5e843e444041"
+    },
+    {
+      "path": "data/contracts/owcoach_quality_remediation_contract_v50_16.json",
+      "size": 859,
+      "sha256": "884740b797879913cc7b5ed49d2bd99cae0273931a11db137866d88417e92012"
+    },
+    {
+      "path": "data/contracts/owcoach_rank_advice_quality_contract_v50_9.json",
+      "size": 976,
+      "sha256": "b9dc1bed0a2413efa4992054e53117827edad42109c69c715b1f7d7619ab8e36"
+    },
+    {
+      "path": "data/contracts/owcoach_target_unification_contract_v50_3.json",
+      "size": 1084,
+      "sha256": "87fd83844a549c38f775d1b79c5015892e3fecfb28c68057eede8ed3ea14b103"
+    },
+    {
+      "path": "data/contracts/owcoach_text_uniqueness_contract_v50_11.json",
+      "size": 1284,
+      "sha256": "5866badf5512c7b02533fa685cfc269382f14a9733a72508d304b76b3bc9f756"
+    },
+    {
+      "path": "data/contracts/owcoach_ultimate_decision_contract_v50_6.json",
+      "size": 943,
+      "sha256": "49b4386b7c2bdfe40272d4fb3e2cc57bd348968875453f65c2ff58a0e67a9ae8"
+    },
+    {
+      "path": "data/contracts/owcoach_wave_review_loop_contract_v50_18.json",
+      "size": 979,
+      "sha256": "137e3cadbd47961e121526865af1ed57fa1bf7bf5f40cf7f8be7369612d52c67"
+    },
+    {
+      "path": "data/reports/validation_report.json",
+      "size": 7166,
+      "sha256": "095afc1907d1bdf21c881d0d02f843033574af0bc5e0183f3e8d7cf4da85a37e"
+    },
+    {
+      "path": "data/shared/owcoach_csv_compaction_manifest_v50_25.json",
+      "size": 148055,
+      "sha256": "d8d21ab7bc9d7072d458a863f10400c0de856ddf1e5048ce3b26ad87185c131b"
+    },
+    {
+      "path": "data/shared/owcoach_depth_enhancement_db_v50_17.csv",
+      "size": 1123178,
+      "sha256": "7cab2c554164e363f1957e5c1bc282fa0ead3ab8bee2908e86155c83425204eb"
+    },
+    {
+      "path": "data/shared/owcoach_diagnostic_text_uniqueness_hints_v50_11.csv",
+      "size": 649861,
+      "sha256": "0a16a21bd321b8a500faf7c70a6d78f1026311d5d2de5c0618f0319d9174b6f5"
+    },
+    {
+      "path": "data/shared/owcoach_enemy_skill_wait_windows_v50_7.csv",
+      "size": 240246,
+      "sha256": "de114f629747c6dfb34faab76cd4b8e17c4caa61bbe6f46d4825ee15b73cda78"
+    },
+    {
+      "path": "data/shared/owcoach_feature_entitlement_db_v50_13.csv",
+      "size": 240485,
+      "sha256": "3c491302909d3e75c91f0c1ec9bd3f3f08eecab23d24d19b3acb5c1e44cc19dd"
+    },
+    {
+      "path": "data/shared/owcoach_hero_registry_v50_25.csv",
+      "size": 2797,
+      "sha256": "a90c7cd254083c73c46b32eea7487feb703c8f037a9058f91e68128498f2dc84"
+    },
+    {
+      "path": "data/shared/owcoach_macro_rebuild_phase1_notes_v50_29_wip.json",
+      "size": 335,
+      "sha256": "d16fac348a1715c3cd0828bc6e36fa3eb4946be106cfca63eb555cc4086e2c08"
+    },
+    {
+      "path": "data/shared/owcoach_macro_rebuild_phase2_notes_v50_29_wip.json",
+      "size": 720,
+      "sha256": "efadc9c4e6c3dd9526d573aa3ea3ae6e2c2f2b487482caf7e12758cf2994f79e"
+    },
+    {
+      "path": "data/shared/owcoach_macro_rebuild_phase3_notes_v50_30_wip.json",
+      "size": 558,
+      "sha256": "750782dffb1443e38604a5cc119ab2731f181833325b9ea6c7400e1979402bf0"
+    },
+    {
+      "path": "data/shared/owcoach_macro_rebuild_phase4_notes_v50_31_wip.json",
+      "size": 825,
+      "sha256": "d6bafbe8ac83009525230c834f503e9de081e8d35ff744e6e5de20bbfa39ebd3"
+    },
+    {
+      "path": "data/shared/owcoach_macro_rebuild_phase5_notes_v50_32_wip.json",
+      "size": 954,
+      "sha256": "613364ebf3ae5475e2ac71bbd0006e02a795a4265421b4e1527685e0f673e2c2"
+    },
+    {
+      "path": "data/shared/owcoach_macro_rebuild_phase6_notes_v50_33_wip.json",
+      "size": 1001,
+      "sha256": "99baff0042805667634d14ee72a95ab097a4fcb0115d4d001b12181c180033b5"
+    },
+    {
+      "path": "data/shared/owcoach_macro_rebuild_phase7_release_status_v50_34.json",
+      "size": 582,
+      "sha256": "7adff6593c28664d625a21828403422f468d2daf890c4d76cfee27abe035ee03"
+    },
+    {
+      "path": "data/shared/owcoach_matchup_category_taxonomy_db_v50_12.csv",
+      "size": 478537,
+      "sha256": "fe95e99c9c0f17ac774d9e4cfd86b155cae80ed687050b09edfdc4c017370c0c"
+    },
+    {
+      "path": "data/shared/owcoach_matchup_reason_db_v50_10.csv",
+      "size": 728177,
+      "sha256": "bbfc190e923bdccfe480723f2d1949a806dbc148c84f757bf3877904be91807a"
+    },
+    {
+      "path": "data/shared/owcoach_priority_target_decision_db_v50_8.csv",
+      "size": 346967,
+      "sha256": "0f3daf6c9e744dbdbdabb8a2cd9ce1a16b7606e159e7c088500d3bfbc81a9461"
+    },
+    {
+      "path": "data/shared/owcoach_rank_advice_quality_db_v50_9.csv",
+      "size": 723387,
+      "sha256": "e4fdda695df8894228dd82ffaf3d244030a61369bb2cbf52a69d0011938aba3b"
+    },
+    {
+      "path": "data/shared/owcoach_ultimate_decision_db_v50_6.csv",
+      "size": 15086,
+      "sha256": "26f6c99783089f043a465cc7fa6d2d7fbd76e6a26e2b43d58eb9b3473a1985fa"
+    },
+    {
+      "path": "data/shared/owcoach_wave_review_loop_db_v50_18.csv",
+      "size": 1111554,
+      "sha256": "c01497330227aaa5be0eca054060997968917fe2326a9f1be60862d78c33bb1d"
+    },
+    {
+      "path": "data/targets/ashe/ashe_comp_diagnosis_db_v1.csv",
+      "size": 55371,
+      "sha256": "4f2de8235e59df7010e0a565b5437972539f4a459fb1bcb9cba09e92945cd03f"
+    },
+    {
+      "path": "data/targets/ashe/ashe_hero_db_v1_full_all_roles.csv",
+      "size": 246221,
+      "sha256": "81c01fd4670fe7b6099ca1a51f22e63d0865ae0c15121e428563f06d350ccda2"
+    },
+    {
+      "path": "data/targets/bastion/bastion_comp_diagnosis_db_v1.csv",
+      "size": 19913,
+      "sha256": "7a587326e904c4f61fa13b7a7b7d4243fca807a2ccbac23544ae1417f0c4c44e"
+    },
+    {
+      "path": "data/targets/bastion/bastion_hero_db_v1_full_all_roles.csv",
+      "size": 207269,
+      "sha256": "b29ebdc9c734b6b8c0553a37f54c7ed8c0548e2be85e17e4b42dd2c991297614"
+    },
+    {
+      "path": "data/targets/cassidy/cassidy_comp_diagnosis_db_v1.csv",
+      "size": 57340,
+      "sha256": "b85495a5870293dd283fda52ff53c5445cc3625079307babdb3c807658b1339b"
+    },
+    {
+      "path": "data/targets/cassidy/cassidy_hero_db_v1_full_all_roles.csv",
+      "size": 266238,
+      "sha256": "9ace6dacb16bc6f76f669d8caef274021b7b2a2bdfc74499d8e852675559de4a"
+    },
+    {
+      "path": "data/targets/echo/echo_comp_diagnosis_db_v1.csv",
+      "size": 35449,
+      "sha256": "8eaf00229298a59517fda57c740be97c0ddb116d5baa736589e7534df35f54d7"
+    },
+    {
+      "path": "data/targets/echo/echo_hero_db_v1_full_all_roles.csv",
+      "size": 207980,
+      "sha256": "2e623162f54a48b9135ec44f1c0f9cfb177f4196a1521e6c4d29772ba16ccc4f"
+    },
+    {
+      "path": "data/targets/emre/emre_comp_diagnosis_db_v1.csv",
+      "size": 34021,
+      "sha256": "5fb2e2ab5d6f922c8304f9ef1447e158873810e4bec76c000e6681619060deb2"
+    },
+    {
+      "path": "data/targets/emre/emre_hero_db_v1_full_all_roles.csv",
+      "size": 202442,
+      "sha256": "406598da4aef64376be2a1ab1b79058a3b553f140cf5f2898c00915136d58012"
+    },
+    {
+      "path": "data/targets/genji/genji_comp_diagnosis_db_v1.csv",
+      "size": 56351,
+      "sha256": "8a27add88df9257beaad5429cf7d76b57b37342a63712b9d98e332dab3533088"
+    },
+    {
+      "path": "data/targets/genji/genji_hero_db_v1_full_all_roles.csv",
+      "size": 269932,
+      "sha256": "c14311755e31bf0f641b89ed004b91754655bac7432e3cb97ade9804c3873000"
+    },
+    {
+      "path": "data/targets/hanzo/hanzo_comp_diagnosis_db_v1.csv",
+      "size": 39173,
+      "sha256": "2ad7b9b985a43e0921e772255cd329fc7e5102c50d44fd85f5cc2715e9ca17ae"
+    },
+    {
+      "path": "data/targets/hanzo/hanzo_hero_db_v1_full_all_roles.csv",
+      "size": 252953,
+      "sha256": "0677ef519b9f40107fa13b479e34bd21d075c67690a3ce331743028947c0ce64"
+    },
+    {
+      "path": "data/targets/junkrat/junkrat_comp_diagnosis_db_v1.csv",
+      "size": 36826,
+      "sha256": "fe1747704aa37891628b0639eaece01d4d4197c6d425c035c4cf625e0c4e34a8"
+    },
+    {
+      "path": "data/targets/junkrat/junkrat_hero_db_v1_full_all_roles.csv",
+      "size": 212858,
+      "sha256": "456d14e33d33e1e0e5cee07c5987613d1429a9832e5266a806550d8654a8b907"
+    },
+    {
+      "path": "data/targets/mei/mei_comp_diagnosis_db_v1.csv",
+      "size": 20020,
+      "sha256": "addec7002875e4a3bc9e18dd4c4d9e919cc3afe5e296e8f4e7a0d9ce184f2250"
+    },
+    {
+      "path": "data/targets/mei/mei_hero_db_v1_full_all_roles.csv",
+      "size": 190898,
+      "sha256": "e0393dbc60f2f28a20a2b38528f3f5ed4752102f04d3bb37f5e5fdbb9dd558c2"
+    },
+    {
+      "path": "data/targets/pharah/pharah_comp_diagnosis_db_v1.csv",
+      "size": 35143,
+      "sha256": "8197063452d27ee8cb3f3caeda360c0d2e390a6558413781a902792199fbdccb"
+    },
+    {
+      "path": "data/targets/pharah/pharah_hero_db_v1_full_all_roles.csv",
+      "size": 208343,
+      "sha256": "9f5992b57ac303dcb8c8b282411f730f7879b20f11aef323c9374b42ceebb3e7"
+    },
+    {
+      "path": "data/targets/reaper/reaper_comp_diagnosis_db_v1.csv",
+      "size": 43878,
+      "sha256": "f4ddead65af541c8d14e89d6ae652fbf17aeba383deaf49fd48f3a4deac47034"
+    },
+    {
+      "path": "data/targets/reaper/reaper_hero_db_v1_full_all_roles.csv",
+      "size": 263932,
+      "sha256": "92315f6929a7903e0dc8da0d192a4d51aee359f918c17ceaba000342ed0a1c8a"
+    },
+    {
+      "path": "data/targets/sojourn/sojourn_comp_diagnosis_db_v1.csv",
+      "size": 7940,
+      "sha256": "44c06918c83403c3e2f44ead72b0cc98f586df413a2c5df05f3bdc1fc874806a"
+    },
+    {
+      "path": "data/targets/sojourn/sojourn_hero_db_v1_full_all_roles.csv",
+      "size": 240011,
+      "sha256": "c0db741fd7718fff18844686e8c54b401bdb95746bb1d56dd02337306f9c19bd"
+    },
+    {
+      "path": "data/targets/soldier76/soldier76_comp_diagnosis_db_v1.csv",
+      "size": 10657,
+      "sha256": "82300e722fff9d34da19127029b707a2ba07b14fe66eff5a8bc63ac3a70d82d2"
+    },
+    {
+      "path": "data/targets/soldier76/soldier76_hero_db_v1_full_all_roles.csv",
+      "size": 238819,
+      "sha256": "bc9b50179d3dc40d156dc8173e8ab2510599448c71474bec1cc6442c9882dc65"
+    },
+    {
+      "path": "data/targets/sombra/sombra_comp_diagnosis_db_v1.csv",
+      "size": 20559,
+      "sha256": "2570a0e1bfdf45669b96056d3c0abd7c38b15b0a281372d170900e624fdf60fa"
+    },
+    {
+      "path": "data/targets/sombra/sombra_hero_db_v1_full_all_roles.csv",
+      "size": 196898,
+      "sha256": "5bbd6dbc442ffd17d018ff55c4b9c51a8471b7febc2733a459beecb4915c0209"
+    },
+    {
+      "path": "data/targets/symmetra/symmetra_comp_diagnosis_db_v1.csv",
+      "size": 46368,
+      "sha256": "f41289b93b414ec9005fd8a0a84d1bc47679a447f05537d8445a48be164dc0e1"
+    },
+    {
+      "path": "data/targets/symmetra/symmetra_hero_db_v1_full_all_roles.csv",
+      "size": 257416,
+      "sha256": "144fe7a2cab98d519ef07fb67b7698d151f6719206a87b83c0a868f9b08362dd"
+    },
+    {
+      "path": "data/targets/torbjorn/torbjorn_comp_diagnosis_db_v1.csv",
+      "size": 39552,
+      "sha256": "4714b4427514f12c80c4da569f4347b67e37b9778773039eab3fbec89274c3e0"
+    },
+    {
+      "path": "data/targets/torbjorn/torbjorn_hero_db_v1_full_all_roles.csv",
+      "size": 225265,
+      "sha256": "8a5f3d1874b28c25207a482cf8b2122e6e581a6f89edc36dcf21b1847283003b"
+    },
+    {
+      "path": "data/targets/tracer/tracer_comp_diagnosis_db_v1.csv",
+      "size": 61394,
+      "sha256": "ffb8cfd7cf90a38c1d12578bdfc3f6e9a06a2e0f85ed7531448ae39d73cfcd45"
+    },
+    {
+      "path": "data/targets/tracer/tracer_hero_db_v1_full_all_roles.csv",
+      "size": 271485,
+      "sha256": "76552c1b9230a74f03d16d05b4701e553d6825433a8ded7c831094472d3fd1a3"
+    },
+    {
+      "path": "diagnosis_text/README.md",
+      "size": 1684,
+      "sha256": "a19a3d06dd581f393281be22014c59fe2bbbcb6a32e75ac89ac358e227631d50"
+    },
+    {
+      "path": "diagnosis_text/bundle.json",
+      "size": 15591,
+      "sha256": "5ed05887b22dc81ae430a0195173cd4a6e7deface71df40d9e54dbbbf5b824b7"
+    },
+    {
+      "path": "diagnosis_text/ja/composition_profiles.json",
+      "size": 10008,
+      "sha256": "f46ab1b6a10a4b038372da1aade97b3e44483bc1e78530c0cadeb5858be3bdc4"
+    },
+    {
+      "path": "diagnosis_text/ja/composition_win_conditions.json",
+      "size": 1635,
+      "sha256": "ebcd59bcc550ff51b345c875b1cc19b1bfc803c4bab6cbf46c1c7bdd99992c76"
+    },
+    {
+      "path": "diagnosis_text/ja/section_titles.json",
+      "size": 387,
+      "sha256": "10f2d9b9ced9734a6fa9483bc5ee5ede07ae45554f27a9ab5d6d3e044beb63e1"
+    },
+    {
+      "path": "diagnosis_text/ja/target_role_templates.json",
+      "size": 1752,
+      "sha256": "e6588ad9ef9081b0c26dee99c1f7258f16d04b703957058f9146613bad5d54d7"
+    },
+    {
+      "path": "diagnosis_text/output_rules.json",
+      "size": 353,
+      "sha256": "18f697f6352683799032f7d65996691bf20b021d2bb8ffe8d9af21960a7094cd"
+    },
+    {
+      "path": "diagnosis_text/rewrite_rules.json",
+      "size": 605,
+      "sha256": "3b12421fe1553898550ae63f169caa9e915bf4d5ee7a92c89a8d86acdc3927f1"
+    },
+    {
+      "path": "diagnosis_text/schemas/diagnosis_text_bundle.schema.json",
+      "size": 712,
+      "sha256": "8b2c2643cc39d9952e22952e38d3dea0719604db50fabefd0c9c53029e2768f3"
+    },
+    {
+      "path": "docs/audits/OWCOACH_COMPOSITION_LARGE_SAMPLE_POLISH_v50_26.md",
+      "size": 1446,
+      "sha256": "bc14036ba36e4ba60d0629a416a015cf74b8038b804dd036a7297737e77f14df"
+    },
+    {
+      "path": "docs/audits/OWCOACH_CSV_STRUCTURE_AUDIT_v50_25.md",
+      "size": 1596,
+      "sha256": "d1c369f5a7c614200c40ab37e3d34652b1e83c3a67367b0d4cef6a42940ddea0"
+    },
+    {
+      "path": "docs/audits/OWCOACH_DUPLICATE_SOURCE_AUDIT_v50_24.md",
+      "size": 1820,
+      "sha256": "92e22b52ff17a5a477ae02849ed6ef147c782f8f833de17ad43ed83d6abf23c2"
+    },
+    {
+      "path": "docs/audits/TARGET_UNIFICATION_AUDIT_v50_3.md",
+      "size": 3500,
+      "sha256": "73710fcfefd7062ce426becab8fce0c0b2176207ee39501b93b31019e5ef47b7"
+    },
+    {
+      "path": "docs/contracts/COMPOSITION_SYNTHESIS_CONTRACT_v50_4.md",
+      "size": 1361,
+      "sha256": "f025a54ec2a8e1f45cfb85feccca69907b4db8b5d90be38eed3c68f7d52fe883"
+    },
+    {
+      "path": "docs/contracts/COMPOSITION_TEXT_QUALITY_CONTRACT_v50_5.md",
+      "size": 1148,
+      "sha256": "94bd2a033ba1c8c873e0551efa7edda5f3b234722cdad0f4531a43c2a6ca985f"
+    },
+    {
+      "path": "docs/contracts/DB_QUALITY_SCORE_CONTRACT_v50_15.md",
+      "size": 850,
+      "sha256": "034fbc0029c5295c7660161f9652584abac4ea87b54785cbffe789a995991d61"
+    },
+    {
+      "path": "docs/contracts/DEPTH_ENHANCEMENT_CONTRACT_v50_17.md",
+      "size": 796,
+      "sha256": "ce586ca1f3dd631efd63af5b6a0d6a2b97164164e4554cf0c8b5803753a1058c"
+    },
+    {
+      "path": "docs/contracts/DIAGNOSIS_RESULT_UX_CONTRACT_v50_19.md",
+      "size": 718,
+      "sha256": "6ed785fc6ba41ba81cc79abb997f77418d57a22d2481423adb9f6b1f65670223"
+    },
+    {
+      "path": "docs/contracts/DIAGNOSIS_TEXT_STRUCTURE_CONTRACT_v50_22.md",
+      "size": 1285,
+      "sha256": "e03d491406007a384119368a100ce4746c742e41e37935244cc9e0bb742b982f"
+    },
+    {
+      "path": "docs/contracts/DIAGNOSTIC_TEXT_UNIQUENESS_CONTRACT_v50_11.md",
+      "size": 1002,
+      "sha256": "61a9638ea2c39e4b65bb472f970420d90ed4422443d88a60613e082776cf6cc1"
+    },
+    {
+      "path": "docs/contracts/ENEMY_SKILL_WAIT_CONTRACT_v50_7.md",
+      "size": 1126,
+      "sha256": "567714b972a306aed1c39aa78ab0d4dc01eb49c6515af48118a64a3ef4069e2a"
+    },
+    {
+      "path": "docs/contracts/ENGLISH_PARITY_CONTRACT_v50_14.md",
+      "size": 936,
+      "sha256": "3ff11a68b1bfde46c033f96880b759885016a631b491933cdb49d49dd292e631"
+    },
+    {
+      "path": "docs/contracts/FEATURE_ENTITLEMENT_CONTRACT_v50_13.md",
+      "size": 975,
+      "sha256": "bb83639d18dc14d96f9b71f2a91dc42dfcb34696762dc1ed864c0798f660232e"
+    },
+    {
+      "path": "docs/contracts/FILE_LAYOUT_OPTIMIZATION_CONTRACT_v50_23.md",
+      "size": 1072,
+      "sha256": "90db945fa4c65d776854994d55878a13fa44175128d7b784a4f31a42db0dfbdb"
+    },
+    {
+      "path": "docs/contracts/HANDOFF_READINESS_CONTRACT_v50_20.md",
+      "size": 854,
+      "sha256": "b4d3ee33f677ea40ddd4e994ecbbbf228a24a4710fa1f87becc13288f8f3f37a"
+    },
+    {
+      "path": "docs/contracts/MATCHUP_CATEGORY_TAXONOMY_CONTRACT_v50_12.md",
+      "size": 891,
+      "sha256": "75629d9e75d90ed2bf4aa4e618d4146f077736785243c5b2208b63c245c12b8c"
+    },
+    {
+      "path": "docs/contracts/MATCHUP_REASON_CONTRACT_v50_10.md",
+      "size": 763,
+      "sha256": "4e0395f3dcfdec11f06bfcbf626af1054bce36faf29fe85834385b332776682b"
+    },
+    {
+      "path": "docs/contracts/PRIORITY_TARGET_CONTRACT_v50_8.md",
+      "size": 1043,
+      "sha256": "48ac1fc52624667fe1722077569736c8f34cfd11f14d9e9351a756f33c244d1c"
+    },
+    {
+      "path": "docs/contracts/QUALITY_REMEDIATION_CONTRACT_v50_16.md",
+      "size": 749,
+      "sha256": "6af9256ebee0b26e84f6ff7862ce52bbf92504404c55b8194342e4ba597e8bfc"
+    },
+    {
+      "path": "docs/contracts/RANK_ADVICE_QUALITY_CONTRACT_v50_9.md",
+      "size": 802,
+      "sha256": "aa7a35fd1f5babb49e37b8fc7ad2909a61aaf80e173a7b87400c98ceb92b681e"
+    },
+    {
+      "path": "docs/contracts/ULTIMATE_DECISION_CONTRACT_v50_6.md",
+      "size": 908,
+      "sha256": "32c95116cf5d0e9829bee1c2f2b45e6ca6ecde3932b08162e4d778bfba848558"
+    },
+    {
+      "path": "docs/contracts/WAVE_REVIEW_LOOP_CONTRACT_v50_18.md",
+      "size": 718,
+      "sha256": "59e4e07a6411fd6de67d73cbfa76e87afe40dfe3b97b4bc4eb0f12d7ec72294b"
+    },
+    {
+      "path": "docs/packs/README_PACK_AA_MACRO_REBUILD_PHASE4.md",
+      "size": 1080,
+      "sha256": "875cf6ac4fe5ac84c1ef2a74efa4e04b0d69f759ea616ac67c97483d83ff8264"
+    },
+    {
+      "path": "docs/packs/README_PACK_AB_MACRO_REBUILD_PHASE5.md",
+      "size": 902,
+      "sha256": "880f282d66f4af6d2541d8bcbcf6d7c535361dcf457b4e1ce4581322dedcda62"
+    },
+    {
+      "path": "docs/packs/README_PACK_AC_MACRO_REBUILD_PHASE6.md",
+      "size": 1376,
+      "sha256": "de3080a74be09bc90c4e0e5df92e099306c04dd3edcdb86ea5e9d9e01bb5be8e"
+    },
+    {
+      "path": "docs/packs/README_PACK_AD_RELEASE_STABILIZATION.md",
+      "size": 1442,
+      "sha256": "9463d36ba6c6e39faad9b3ffb0dd4f4d15e2ed94753dcebad075c5a15eefeb78"
+    },
+    {
+      "path": "docs/packs/README_PACK_J_MATCHUP_REASON_CLARITY.md",
+      "size": 732,
+      "sha256": "ca669cd55e213c01c9f80f866c0adc8b8d5430f4f923a0766cc769b44ec27453"
+    },
+    {
+      "path": "docs/packs/README_PACK_K_DIAGNOSTIC_TEXT_UNIQUENESS.md",
+      "size": 673,
+      "sha256": "b8ad002e89c144b4f35d6c8ea68ce8fdd46e9a5599949eeefd2dcc9127e8c1bb"
+    },
+    {
+      "path": "docs/packs/README_PACK_L_MATCHUP_CATEGORY_TAXONOMY.md",
+      "size": 708,
+      "sha256": "53cdde1896971d9a333611d64b7821e696805291783977880ee564456dd6191c"
+    },
+    {
+      "path": "docs/packs/README_PACK_M_FEATURE_ENTITLEMENTS.md",
+      "size": 933,
+      "sha256": "e334f8b5e22f3b24ad21cbf6e4060009f8b949f68944a1b54efc40d75fc0ea83"
+    },
+    {
+      "path": "docs/packs/README_PACK_N_ENGLISH_PARITY.md",
+      "size": 1060,
+      "sha256": "32ede40359e667a33d562fefd7c789add9eea207eadcd0da7b51282b71734e2f"
+    },
+    {
+      "path": "docs/packs/README_PACK_O_DB_QUALITY_SCORE.md",
+      "size": 1055,
+      "sha256": "a92c291a5d81add349ba730a5b57cee94252dc80a9c1993cef94198df33623e5"
+    },
+    {
+      "path": "docs/packs/README_PACK_P_QUALITY_REMEDIATION.md",
+      "size": 973,
+      "sha256": "f86925fdab512e63cf6432980251bf889691937b610a9fe14279bd5a42c317f1"
+    },
+    {
+      "path": "docs/packs/README_PACK_Q_DEPTH_ENHANCEMENT.md",
+      "size": 728,
+      "sha256": "f2a60219f8cb07dd6f65fc1d384ffb8f4901cc659b12dbdeece95a229995ca45"
+    },
+    {
+      "path": "docs/packs/README_PACK_R_WAVE_REVIEW_LOOP.md",
+      "size": 606,
+      "sha256": "68d478187c3e3efefa03543a43f5f32a33f31ed536aee85a7d0ee659531a80b7"
+    },
+    {
+      "path": "docs/packs/README_PACK_S_DIAGNOSIS_RESULT_UX.md",
+      "size": 808,
+      "sha256": "56e774f00ab7f8f5e6b665b6f611767944f94e437e043edbfda143303b0d239a"
+    },
+    {
+      "path": "docs/packs/README_PACK_T_HANDOFF_READINESS.md",
+      "size": 686,
+      "sha256": "490cc903393eac0bd06b630dd22e54f0e46aa6d86426285d0cfc237e9187a486"
+    },
+    {
+      "path": "docs/packs/README_PACK_U_DIAGNOSIS_TEXT_STRUCTURE.md",
+      "size": 1002,
+      "sha256": "60cdbcdaf236792f702688312fd9b3f40c4d80593c9a395eed772afaa9bcfe32"
+    },
+    {
+      "path": "docs/packs/README_PACK_U_HOTFIX_SYNERGY_COMPAT.md",
+      "size": 794,
+      "sha256": "50c9dcd39213d20be0ae033e8aa7cdc49d542a4b446f7fef98f5ab3ca9691c1d"
+    },
+    {
+      "path": "docs/packs/README_PACK_V_FILE_LAYOUT_OPTIMIZATION.md",
+      "size": 1074,
+      "sha256": "02b4b875a7a78c818e8829a41e4510a6e51e66bb6f45767ac6bd0dc6598cb99f"
+    },
+    {
+      "path": "docs/packs/README_PACK_W_CSV_SOURCE_COMPACTION.md",
+      "size": 776,
+      "sha256": "5f650837499c695d1794a57c77e1aae95ca81906440fde6b82b9617abab0ff17"
+    },
+    {
+      "path": "docs/packs/README_PACK_W_DUPLICATE_SOURCE_REDUCTION.md",
+      "size": 955,
+      "sha256": "f4b82213500bde796c26b84294386eb1157a6cfe56e7ae5110171463f531dad3"
+    },
+    {
+      "path": "docs/packs/README_PACK_X_COMPOSITION_LARGE_SAMPLE_POLISH.md",
+      "size": 662,
+      "sha256": "ae29c6e6ecf2d5e57d54001a1394f405e8b83146feb86d468196acbab7071d6d"
+    },
+    {
+      "path": "docs/packs/README_PACK_X_MACRO_REBUILD_PHASE1.md",
+      "size": 1593,
+      "sha256": "56f0eefe4cd0be3dc0a229ec5b9bc109b46d3058ba826183344c651659810195"
+    },
+    {
+      "path": "docs/packs/README_PACK_Y_MACRO_REBUILD_PHASE2.md",
+      "size": 1113,
+      "sha256": "7b270222ffb610b047a474145f37447e4a4f9268a04910b4b8f06406e45f0af0"
+    },
+    {
+      "path": "docs/packs/README_PACK_Z_MACRO_REBUILD_PHASE3.md",
+      "size": 1071,
+      "sha256": "b57baf08f737e86db7e835d77912bf14d1172ca8b6ecadd771a2e1defa13cb2e"
+    },
+    {
+      "path": "docs/status/GITHUB_ACTIONS_NEXT.md",
+      "size": 1294,
+      "sha256": "67d0290b9c284b275c576b0f067f2faa5cf3d3d2c9607259fc93da74ea6b47dc"
+    },
+    {
+      "path": "docs/status/GITHUB_ACTIONS_PHASE6_BROWSER_QA_PASS_v50_33.md",
+      "size": 846,
+      "sha256": "8a099d18777641f8ca8886d792a23eed873c4baff80c6982ec6cf7c1d181fc35"
+    },
+    {
+      "path": "handoff_bundle/00_READ_ME_FIRST.md",
+      "size": 973,
+      "sha256": "831eb2c6537e15dc5d5643c9ccea84b6b8608e27e83d812a113557d6eef199bf"
+    },
+    {
+      "path": "handoff_bundle/CHAT_HANDOFF_v50_28.md",
+      "size": 3405,
+      "sha256": "f754093bcea9819c1d4cea4103175cb58a5a5ae32a21563ae775f6641e02cfff"
+    },
+    {
+      "path": "handoff_bundle/CHAT_HANDOFF_v50_34.md",
+      "size": 2035,
+      "sha256": "d817c87f7eb1ec9d98fbf4aeae523bf4908896ebe1b17e91215ee219e6dd4686"
+    },
+    {
+      "path": "handoff_bundle/CURRENT_STATE_v50_20.md",
+      "size": 878,
+      "sha256": "2a4e7397995b581f0c568022b7026012c7d0f1a7ea18bcba38f1f18cf066a14e"
+    },
+    {
+      "path": "handoff_bundle/GITHUB_STATUS_AND_HOLD.md",
+      "size": 438,
+      "sha256": "3fc23c0010599d0baaf7f74fca3ac8bada07574d515122d937dbdf018dafabc2"
+    },
+    {
+      "path": "handoff_bundle/LATEST_FILES.md",
+      "size": 290,
+      "sha256": "ea272c6a8dde82424c06806faa58dcb5a0acc3071d2a2009cfc265bfbed4db37"
+    },
+    {
+      "path": "handoff_bundle/NEXT_CHAT_PROMPT.md",
+      "size": 356,
+      "sha256": "cfddf172da2679130169456d92baa3891e1f602fe2cb28fa784cc4d6ab19b2e7"
+    },
+    {
+      "path": "handoff_bundle/NEXT_WORK_BACKLOG.md",
+      "size": 899,
+      "sha256": "8376b29d08e785270a4c15abb88773dbf99e5740084a258c8e683e0ac3b1adac"
+    },
+    {
+      "path": "handoff_bundle/PACK_HISTORY_A_TO_T.md",
+      "size": 2571,
+      "sha256": "bb78f2ae18e148b85a26fd7985ca19a5167a98992a639ce4b045e16353c961aa"
+    },
+    {
+      "path": "handoff_bundle/QA_AND_GITHUB_REFLECTION_RUNBOOK.md",
+      "size": 1262,
+      "sha256": "7e26674921f387531df0f8664b61affaf2aa14ebb3e628dc656a9fed74196a9d"
+    },
+    {
+      "path": "handoff_bundle/file_manifest_v50_20.csv",
+      "size": 17561,
+      "sha256": "e1b6b3ac0f3537b7ffcc829ddbedf12f470ecc169b6b420317e339edc684adf0"
+    },
+    {
+      "path": "handoff_bundle/file_manifest_v50_20.json",
+      "size": 28603,
+      "sha256": "ee1b93f7fd2b4f73662051a6de640252d24a77814fc80ad365896627f5c4c641"
+    },
+    {
+      "path": "handoff_bundle/file_manifest_v50_34.csv",
+      "size": 27267,
+      "sha256": "3c895a4850a0475d914ac77c99e7fab3c2cda7b0038769e0cbda39eb0fc28920"
+    },
+    {
+      "path": "handoff_bundle/file_manifest_v50_34.json",
+      "size": 41512,
+      "sha256": "b00bee028d3689ac829be58627136fb853e3ae431415c2af40e111f60e205dfa"
+    },
+    {
+      "path": "index.html",
+      "size": 15308703,
+      "sha256": "20cefcdc38997ea5863befe764dbc5dd9619085fc9ab2d95c83842668bb4a6a1"
+    },
+    {
+      "path": "notices.html",
+      "size": 22457,
+      "sha256": "94349a4569d13123215337d4bcb1f7a59a3f696beab22238c02733ee1f360906"
+    },
+    {
+      "path": "package.json",
+      "size": 8425,
+      "sha256": "f8e4c354efdef8eea4ae830a6c1009404d9126c73df64235301552ec93a98917"
+    },
+    {
+      "path": "playwright.config.js",
+      "size": 1105,
+      "sha256": "32507be7ea9bdd576ab608fdd4d03e4fdffb1183d755b131e203c6d9958f8b74"
+    },
+    {
+      "path": "privacy.html",
+      "size": 21912,
+      "sha256": "38c8a0fdfde8833da233621faab40fc50b07d549b478fff10746cdc2875326c6"
+    },
+    {
+      "path": "robots.txt",
+      "size": 64,
+      "sha256": "4845d5e4799d71a5ea278efa6fe41e8d9982a3013419afe2f02f5979d6be6525"
+    },
+    {
+      "path": "sitemap.xml",
+      "size": 911,
+      "sha256": "a8c621f91d61a46b77e25175e4bf096b2fc6afea0f23e48e078ebb339814321e"
+    },
+    {
+      "path": "terms.html",
+      "size": 22544,
+      "sha256": "553547cced0a652ff53befd91db3dffc3f68a5e558fa1a15caa76985d497acec"
+    },
+    {
+      "path": "tests/owcoach-added-target-db-pack-a-static.cjs",
+      "size": 2342,
+      "sha256": "64cfd215766f27ac0811beff1367bc3c875f9d3ce194586efc0918316f79a382"
+    },
+    {
+      "path": "tests/owcoach-added-target-detail-alignment.spec.js",
+      "size": 1449,
+      "sha256": "93fb92fbd109ba2ff68412ff744b6bd1be1298c6768bfc2d6c54d7b3aef3a062"
+    },
+    {
+      "path": "tests/owcoach-affinity-five-stage.spec.js",
+      "size": 6809,
+      "sha256": "2fdd085041ea0402bda296f64ad05bfce8e344b58b73b2c1a3abefcaff0678a9"
+    },
+    {
+      "path": "tests/owcoach-all-hero-detail.spec.js",
+      "size": 7585,
+      "sha256": "e794d53759c83a51844305b2c2931745ae78e0ebf2daeeff7cc52fbd93179e0d"
+    },
+    {
+      "path": "tests/owcoach-all-target-diagnosis.spec.js",
+      "size": 4993,
+      "sha256": "604c8e5df63c34594e1a9b40d99239872efcba67a5e54f7b1b5b843b74a78889"
+    },
+    {
+      "path": "tests/owcoach-app-source-syntax-static.cjs",
+      "size": 496,
+      "sha256": "a044682abf8659304b24d807dfc6d9b4995bcbdb0e7830bd398a83cca21a90d5"
+    },
+    {
+      "path": "tests/owcoach-app-source-utils.cjs",
+      "size": 1625,
+      "sha256": "23df8afa02cb902e07b33272d56da49587614996db88ce87fe1a13ee192207f0"
+    },
+    {
+      "path": "tests/owcoach-broken-output-regression.spec.js",
+      "size": 7537,
+      "sha256": "342cd042738590a136b6d2cf5d4507be952f453db3b53ca94cd2a149f0a761bf"
+    },
+    {
+      "path": "tests/owcoach-composition-content-validity-static.cjs",
+      "size": 4439,
+      "sha256": "e98a06b13a7f5e3b1e55628ae43be8ccd5004c2d6f1a4d0ab92f10c7f87767fe"
+    },
+    {
+      "path": "tests/owcoach-composition-large-sample-polish-static.cjs",
+      "size": 1436,
+      "sha256": "4f07295563e355a643310ea7d134bcf5ceb30bb600fc968bd5049cccc07635f8"
+    },
+    {
+      "path": "tests/owcoach-composition-priority-consistency-static.cjs",
+      "size": 5725,
+      "sha256": "4742d1e457394f90e8ba5849666fd9882c07341b1100d08c29feb364f0ffd2c2"
+    },
+    {
+      "path": "tests/owcoach-composition-representative-polish-static.cjs",
+      "size": 1073,
+      "sha256": "3bab74dc0ee2b4a9f9fb75c81ea00dd095e9b9247431310ceeab7baf83cea8ca"
+    },
+    {
+      "path": "tests/owcoach-composition-synthesis-static.cjs",
+      "size": 1026,
+      "sha256": "e2489329da95797b624a0257a608e4f20b6988b4879ea9f9e9dec16571ad1eba"
+    },
+    {
+      "path": "tests/owcoach-composition-text-quality-static.cjs",
+      "size": 2091,
+      "sha256": "06c7ad72ffcec129d2e7f816a75478dbbb4ff464b22f62756bd156cfb44e784b"
+    },
+    {
+      "path": "tests/owcoach-csv-source-utils.cjs",
+      "size": 3072,
+      "sha256": "1c466d479b24759b0e7613831dac4687b9dcba5a0f6006f696c4559b23c6d558"
+    },
+    {
+      "path": "tests/owcoach-csv-structure-static.cjs",
+      "size": 2916,
+      "sha256": "5be6c15e4c90dc56b32e1662bbce40f66cd28711851e8bc271126cdd2711a1df"
+    },
+    {
+      "path": "tests/owcoach-db-quality-score-static.cjs",
+      "size": 2603,
+      "sha256": "ad432a456f2032bc13dd0e5ad22bdd1dc82ee96c2fe5c335a95f134d03abce0e"
+    },
+    {
+      "path": "tests/owcoach-db-schema-contract-static.cjs",
+      "size": 5211,
+      "sha256": "0a6089f60eaf56be5490a7a9444cbe5be70a8c69e514fab09297c3c3a9ab540e"
+    },
+    {
+      "path": "tests/owcoach-depth-enhancement-static.cjs",
+      "size": 2772,
+      "sha256": "49e62acb4455bad4135baf9d0444e8f1781f18f2031ab664e6879ad9b0a2a15a"
+    },
+    {
+      "path": "tests/owcoach-detail-text-polish-static.cjs",
+      "size": 1099,
+      "sha256": "1b37462fdbfbf514a7bde6edf8694948aa7f336032445bb9cad350813f66d2af"
+    },
+    {
+      "path": "tests/owcoach-diagnosis-text-structure-static.cjs",
+      "size": 3021,
+      "sha256": "86b4583de60da342fb85e75cd0167d29cc8b6be36108f07a2597912addf92f81"
+    },
+    {
+      "path": "tests/owcoach-diagnosis-ux-static.cjs",
+      "size": 1676,
+      "sha256": "77e9f0353b39a4b7c188d60be3b22506af9014f7a2b37a9f124560d417f204e7"
+    },
+    {
+      "path": "tests/owcoach-diagnosis.spec.js",
+      "size": 5316,
+      "sha256": "fc51cdcf67772c46a3e3bde1c87a81bfbe286ab3ee70c22cb5283a91b506b1d7"
+    },
+    {
+      "path": "tests/owcoach-enemy-skill-wait-static.cjs",
+      "size": 2957,
+      "sha256": "c1e3b56240fcd66e8c4b138dbe77132e743ca1a2196ad1dc44ce968c6f10b912"
+    },
+    {
+      "path": "tests/owcoach-enemy-unique.spec.js",
+      "size": 7213,
+      "sha256": "058a6a2b4f9ccc9eb6010f7f135445a753e589b7f8b94c8b8d8c44971588fd07"
+    },
+    {
+      "path": "tests/owcoach-english-mobile-ui.spec.js",
+      "size": 6561,
+      "sha256": "93820361b85f5d79087b5ac1418e5aa02c9e8eaf8aa3ef174fefbbaaa9682639"
+    },
+    {
+      "path": "tests/owcoach-english-parity-static.cjs",
+      "size": 2261,
+      "sha256": "43fb484a5bde0f9d2868b7a4567cb47e616e40d3ee1dd9b9ffe8ac1b5ba60241"
+    },
+    {
+      "path": "tests/owcoach-english-synergy-render.spec.js",
+      "size": 1396,
+      "sha256": "b225fa1f9c102c0e6e523a7d370d939090d2d1816a6ae614894e54ce7bbb1e28"
+    },
+    {
+      "path": "tests/owcoach-feature-entitlements-static.cjs",
+      "size": 3670,
+      "sha256": "7dd1f7525b5f6039fc944f916978fb7d5a2bd09c9ea593856e1f381d01eaa491"
+    },
+    {
+      "path": "tests/owcoach-file-layout-static.cjs",
+      "size": 2809,
+      "sha256": "2a4687dd4e96e3a40b5dbcfe00ffdb211207b0a9037d974759633b255200c39e"
+    },
+    {
+      "path": "tests/owcoach-handoff-readiness-static.cjs",
+      "size": 3864,
+      "sha256": "e9926f6fb3ef0b6a2eddbc963b0a339a1b43a329a49bc8189e015d6a605403a8"
+    },
+    {
+      "path": "tests/owcoach-language-endurance.spec.js",
+      "size": 7248,
+      "sha256": "b1e115c2cb3d17b1abddf2702f29b716dda77f88d68b42094ffe2ed9d218af68"
+    },
+    {
+      "path": "tests/owcoach-language.spec.js",
+      "size": 3936,
+      "sha256": "b18db1a437ab82c82b4725c20008aaddb1c62242ab7b3265157918d825303767"
+    },
+    {
+      "path": "tests/owcoach-localstorage-fallback.spec.js",
+      "size": 6758,
+      "sha256": "16909ba98b83fcb4172f1fffb0ab5e610013f57c6622712f62d6ac9f2172e2bb"
+    },
+    {
+      "path": "tests/owcoach-macro-rebuild-phase1-static.cjs",
+      "size": 1467,
+      "sha256": "0c7985e84d34c9f4c08cf05e4b1ede594803d336f5b80162cea5ab7a8780f86a"
+    },
+    {
+      "path": "tests/owcoach-macro-rebuild-phase2-static.cjs",
+      "size": 1732,
+      "sha256": "ef2363641a40d340ce56c14eae0609aa76c0f4dc375db567967003d93d2e19a0"
+    },
+    {
+      "path": "tests/owcoach-macro-rebuild-phase3-static.cjs",
+      "size": 2601,
+      "sha256": "9d00ab451bb0893226ef4c3ebd1f0f79fcff967f57d83c0980e103073b90969b"
+    },
+    {
+      "path": "tests/owcoach-macro-rebuild-phase4-static.cjs",
+      "size": 2045,
+      "sha256": "e7660ef3a76a2a6e7e10cfe31f40b8aab73aa43e82144e26426a75beff4d4316"
+    },
+    {
+      "path": "tests/owcoach-macro-rebuild-phase5-static.cjs",
+      "size": 2343,
+      "sha256": "3846c1ef8314de0074dde8907b858f4d4a11a3a977a55b9f10252b8f1f64ca2e"
+    },
+    {
+      "path": "tests/owcoach-macro-rebuild-phase6-browser.spec.js",
+      "size": 4294,
+      "sha256": "8c1079995a3a3592c2fd4bbf3cbc2631aa762512942f5c7617fdc09c87c7fa46"
+    },
+    {
+      "path": "tests/owcoach-macro-rebuild-phase6-static.cjs",
+      "size": 2783,
+      "sha256": "b04ce04896198446c0dad4d35a364de3e4f9b8eedeec6b0dbf42da369c251405"
+    },
+    {
+      "path": "tests/owcoach-macro-rebuild-phase7-static.cjs",
+      "size": 2806,
+      "sha256": "2ae02c80f97ec4d9fafc16dcb1e3e7116b46e3060f68ed5369b58d7113cb9d19"
+    },
+    {
+      "path": "tests/owcoach-matchup-category-taxonomy-static.cjs",
+      "size": 4234,
+      "sha256": "8b3a5b6909f3bd536f650d64e89a294c3154a9f7a45d30c5161b68254cc7d72f"
+    },
+    {
+      "path": "tests/owcoach-matchup-consistency-static.cjs",
+      "size": 4194,
+      "sha256": "6aaee1dc60b35e1d4b267714d0a16174c2937624b78a23eb1af271775cfeffaf"
+    },
+    {
+      "path": "tests/owcoach-matchup-reason-static.cjs",
+      "size": 2673,
+      "sha256": "c6e41b040bd23894012cc4547321de60c33807f2664b18b301f55fe4b0f34221"
+    },
+    {
+      "path": "tests/owcoach-policy-language-ui.spec.js",
+      "size": 7940,
+      "sha256": "7cc2d35c29e5655707042d872d9f92cfe2486b9fb2365355aad52525351b9e5d"
+    },
+    {
+      "path": "tests/owcoach-priority-targets-static.cjs",
+      "size": 3379,
+      "sha256": "0e5449a558ff240b3361db21f6b9ad9111ed5fdd82668df1d54e65b5b21f862b"
+    },
+    {
+      "path": "tests/owcoach-quality-remediation-static.cjs",
+      "size": 2662,
+      "sha256": "04483e9afaeabb19f69b2026c03352fdfe69bd5764fe52fdc274ce2e08a5186c"
+    },
+    {
+      "path": "tests/owcoach-rank-advice-quality-static.cjs",
+      "size": 3286,
+      "sha256": "5af23a2864551e0d3dffca54b0730b684e55e6326c075f79b6765b47b20bd984"
+    },
+    {
+      "path": "tests/owcoach-render-audit-utils.cjs",
+      "size": 8114,
+      "sha256": "fd59f6807a0b5c25931d2911337e73f70da397992f46a56e061f9f95e745421a"
+    },
+    {
+      "path": "tests/owcoach-seo-files.spec.js",
+      "size": 2551,
+      "sha256": "015c1ac02f1784ec5d2b4c18cc6d3ee2e8a656ef1e530b6441e160748f08b3a6"
+    },
+    {
+      "path": "tests/owcoach-skill-ownership-static.cjs",
+      "size": 1039,
+      "sha256": "b9b3c83a34e714971e426725d30279201abc82587c30595e4840b7431e547e19"
+    },
+    {
+      "path": "tests/owcoach-synergy-browser-matrix.spec.js",
+      "size": 2318,
+      "sha256": "ec58f8826093993b19c1e66a10dc21870bb47140f8ff96bc9ccd6c3f617fd1e0"
+    },
+    {
+      "path": "tests/owcoach-synergy-cross-qa.spec.js",
+      "size": 1332,
+      "sha256": "5479745920f12e7b7f722a2c1d5a462c8d78dc396e10d007a3b09b9c935aa242"
+    },
+    {
+      "path": "tests/owcoach-synergy-priority.spec.js",
+      "size": 1669,
+      "sha256": "140e726aae1ddebf247183a51638886ade10c5f3365a26a1df23d5bba7636058"
+    },
+    {
+      "path": "tests/owcoach-target-synergy-role-lines.spec.js",
+      "size": 1390,
+      "sha256": "5f47f46963119af1661deb41f98ea7f3e8718adfed58d8cf81f9e174862fe10a"
+    },
+    {
+      "path": "tests/owcoach-target-unification-static.cjs",
+      "size": 3698,
+      "sha256": "c09a7e427698bf53be5d6d49ad57bf0447665530ce4aab3fed173ae7324cfc87"
+    },
+    {
+      "path": "tests/owcoach-text-clarity-static.cjs",
+      "size": 3809,
+      "sha256": "a4ee599a3fcdb4efee7569273ec151314efa3ef3a75e0be86eaaabe468bbf75e"
+    },
+    {
+      "path": "tests/owcoach-text-uniqueness-static.cjs",
+      "size": 2863,
+      "sha256": "dca7968e947d623880b6d3581c4c578ba35178629df207511dabe66a5148df22"
+    },
+    {
+      "path": "tests/owcoach-ultimate-decision-static.cjs",
+      "size": 2358,
+      "sha256": "1229818f9392f6a23948aea861c03b286a67069415dcad5f38fc9e539669cadb"
+    },
+    {
+      "path": "tests/owcoach-v4954-static-preflight.cjs",
+      "size": 1151,
+      "sha256": "06da52c499fe2d30b2b0d5409f925dde2c88a22312378f73147ad4e9cc9ca473"
+    },
+    {
+      "path": "tests/owcoach-visual-snapshots.spec.js",
+      "size": 8244,
+      "sha256": "f6dd938582f35ccdf36305c0f7e11b6f1b1300c3bbc54f4bfc835cdcc50fc8d3"
+    },
+    {
+      "path": "tests/owcoach-wave-review-loop-static.cjs",
+      "size": 2868,
+      "sha256": "93413632c8024593aa8c7ca8d48f8cdbe2e3d5785ea369b629b04233c5897b36"
+    },
+    {
+      "path": "tests/static-server.cjs",
+      "size": 2751,
+      "sha256": "740c03767f9c01ccff705ccb6c99ba73fa2f4e7030ed84bfa764c7f504a8ad17"
+    },
+    {
+      "path": "tokusho.html",
+      "size": 21488,
+      "sha256": "7d5cba03db0f7064eb95bbd605d9b88ae200ae911d4640e225bc881297e759ea"
+    }
+  ]
+}

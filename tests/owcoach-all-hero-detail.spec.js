@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 const BROKEN_OUTPUT_WORDS = ['undefined', 'null', '[object Object]'];
 const OLD_BAD_WORDS = ['ストルワート', 'Hard No', 'ja_to_en_verified', '横道', '遮蔽へ切る', '同じダイブ経路'];
-const JA_DETAIL_HEADINGS = ['対面方針', '優先対象', '絶対NG'];
+const JA_DETAIL_HEADINGS = ['対面方針', '先に見る相手', '避ける行動'];
 const EN_DETAIL_HEADINGS = ['Matchup Plan', 'Priority Targets', 'Avoid'];
 const JA_ROLES = ['タンク', 'ダメージ', 'サポート'];
 const JA_SUBROLES = ['イニシエーター', 'ブルーザー', 'ストールワート', 'スペシャリスト', 'リコン', 'フランカー', 'シャープシューター', 'タクティシャン', 'メディック', 'サバイバー'];

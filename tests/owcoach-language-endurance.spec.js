@@ -86,10 +86,10 @@ async function assertDetailLanguage(page, lang) {
     expect(text).toContain('Matchup Plan');
     expect(text).toContain('Priority Targets');
     expect(text).not.toContain('対面方針');
-    expect(text).not.toContain('優先対象');
+    expect(text).not.toContain('先に見る相手');
   } else {
     expect(text).toContain('対面方針');
-    expect(text).toContain('優先対象');
+    expect(text).toContain('先に見る相手');
     expect(text).not.toContain('Matchup Plan');
     expect(text).not.toContain('Priority Targets');
   }
